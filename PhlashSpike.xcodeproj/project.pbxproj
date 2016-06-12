@@ -14,9 +14,6 @@
 		A5BD69B91D0D7C4E00ADF4DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5BD69B71D0D7C4E00ADF4DE /* LaunchScreen.storyboard */; };
 		A5BD69C41D0D7C4E00ADF4DE /* PhlashSpikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD69C31D0D7C4E00ADF4DE /* PhlashSpikeTests.swift */; };
 		A5BD69CF1D0D7C4E00ADF4DE /* PhlashSpikeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD69CE1D0D7C4E00ADF4DE /* PhlashSpikeUITests.swift */; };
-		A5BD69DE1D0DAC9300ADF4DE /* CustomOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD69DC1D0DAC9300ADF4DE /* CustomOverlayViewController.swift */; };
-		A5BD69DF1D0DAC9300ADF4DE /* CustomOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5BD69DD1D0DAC9300ADF4DE /* CustomOverlayViewController.xib */; };
-		A5BD69E11D0DAF6100ADF4DE /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD69E01D0DAF6100ADF4DE /* CustomOverlayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,9 +47,6 @@
 		A5BD69CA1D0D7C4E00ADF4DE /* PhlashSpikeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhlashSpikeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5BD69CE1D0D7C4E00ADF4DE /* PhlashSpikeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhlashSpikeUITests.swift; sourceTree = "<group>"; };
 		A5BD69D01D0D7C4E00ADF4DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5BD69DC1D0DAC9300ADF4DE /* CustomOverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlayViewController.swift; sourceTree = "<group>"; };
-		A5BD69DD1D0DAC9300ADF4DE /* CustomOverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomOverlayViewController.xib; sourceTree = "<group>"; };
-		A5BD69E01D0DAF6100ADF4DE /* CustomOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +97,6 @@
 		A5BD69AD1D0D7C4E00ADF4DE /* PhlashSpike */ = {
 			isa = PBXGroup;
 			children = (
-				A5BD69E01D0DAF6100ADF4DE /* CustomOverlayView.swift */,
-				A5BD69DC1D0DAC9300ADF4DE /* CustomOverlayViewController.swift */,
-				A5BD69DD1D0DAC9300ADF4DE /* CustomOverlayViewController.xib */,
 				A5BD69AE1D0D7C4E00ADF4DE /* AppDelegate.swift */,
 				A5BD69B01D0D7C4E00ADF4DE /* ViewController.swift */,
 				A5BD69B21D0D7C4E00ADF4DE /* Main.storyboard */,
@@ -239,7 +230,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5BD69DF1D0DAC9300ADF4DE /* CustomOverlayViewController.xib in Resources */,
 				A5BD69B91D0D7C4E00ADF4DE /* LaunchScreen.storyboard in Resources */,
 				A5BD69B61D0D7C4E00ADF4DE /* Assets.xcassets in Resources */,
 				A5BD69B41D0D7C4E00ADF4DE /* Main.storyboard in Resources */,
@@ -267,9 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5BD69DE1D0DAC9300ADF4DE /* CustomOverlayViewController.swift in Sources */,
 				A5BD69B11D0D7C4E00ADF4DE /* ViewController.swift in Sources */,
-				A5BD69E11D0DAF6100ADF4DE /* CustomOverlayView.swift in Sources */,
 				A5BD69AF1D0D7C4E00ADF4DE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

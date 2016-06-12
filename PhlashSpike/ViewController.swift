@@ -8,9 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, CustomOverlayDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var picker = UIImagePickerController()
+    var overlayView:UIView = UIView()
+    let screenBounds:CGSize = UIScreen.mainScreen().bounds.size
+    let cameraAspectRatio:CGFloat = 4.0/3.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,63 +32,101 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
             picker.sourceType = UIImagePickerControllerSourceType.Camera
             picker.cameraCaptureMode = .Photo
             picker.showsCameraControls = false
-            let screenBounds: CGSize = UIScreen.mainScreen().bounds.size;
-            let scale = screenBounds.height / screenBounds.width;
-            
-            picker.cameraViewTransform = CGAffineTransformScale(picker.cameraViewTransform, scale, scale);
-            
-            
-            
-            let customViewController = CustomOverlayViewController(
-                nibName:"CustomOverlayViewController",
-                bundle: nil
-            )
-            
-            let customView:CustomOverlayView = customViewController.view as! CustomOverlayView
-            customView.frame = self.picker.view.frame
-            customView.cameraLabel.text = "Hello"
-            customView.delegate = self
-            
+            picker.delegate = self
             picker.modalPresentationStyle = .FullScreen
+            
+            picker = makePickerFullScreen(picker)
+            
+            initialiseOverlayView(picker)
+            
             presentViewController(picker, animated: true, completion: {
-                self.picker.cameraOverlayView = customView
+                self.picker.cameraOverlayView = self.overlayView
                 }
             )
-        } else {
-            noCamera()
+        }
+    }
+    
+    func initialiseOverlayView(picker: UIImagePickerController) {
+        self.overlayView.frame = picker.view.frame
+        self.overlayView.backgroundColor = UIColor.clearColor()
+        addRightSwipe()
+    }
+    
+    func addRightSwipe() {
+        let aSelector : Selector = #selector(ViewController.respondToSwipeGesture(_:))
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: aSelector)
+        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
+        self.overlayView.addGestureRecognizer(swipeRight)
+    }
+
+    
+    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.Right:
+                self.picker.takePicture()
+            case UISwipeGestureRecognizerDirection.Left:
+                print("Swiped left")
+            default:
+                break
+            }
         }
     }
     
     
-    func didShoot(overlayView:CustomOverlayView) {
-        picker.takePicture()
-    }
-    
-    
-    
     func imagePickerController(picker: UIImagePickerController,
-        didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
+                               didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
+        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let imageView = getNewImageView(chosenImage)
+        self.overlayView.addSubview(imageView)
+        
+        delay(3.0) {
+            imageView.removeFromSuperview()
+        }
     }
     
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        dismissViewControllerAnimated(true, completion: nil)
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
     }
     
-    func noCamera(){
-        let alertVC = UIAlertController(
-            title: "No Camera",
-            message: "Sorry, this device has no camera",
-            preferredStyle: .Alert)
-        let okAction = UIAlertAction(
-            title: "OK",
-            style:.Default,
-            handler: nil)
-        alertVC.addAction(okAction)
-        presentViewController(
-            alertVC,
-            animated: true,
-            completion: nil)
+    func getNewImageView(image: UIImage) -> UIImageView {
+        let imageView:UIImageView = UIImageView()
+        
+        let newWidth:CGFloat = image.size.width/(image.size.height/screenBounds.height)
+        let xValue:CGFloat = (newWidth-screenBounds.width)/2
+        
+        imageView.frame = CGRect(x: -xValue, y: 0, width: newWidth, height: screenBounds.height)
+        imageView.image = self.resizeImage(image, newWidth: newWidth)
+        
+        return imageView
     }
+    
+    
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
+        
+        let newSize: CGSize = CGSizeMake(newWidth, screenBounds.height)
+        let rect = CGRectMake(0, 0, newSize.width, newSize.height)
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.drawInRect(rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+    
+    func makePickerFullScreen(picker: UIImagePickerController) -> UIImagePickerController {
+        let camViewHeight: CGFloat = screenBounds.width * cameraAspectRatio
+        let scale: CGFloat = screenBounds.height / camViewHeight
+        picker.cameraViewTransform = CGAffineTransformMakeTranslation(0, (screenBounds.height - camViewHeight) / 2.0);
+        picker.cameraViewTransform = CGAffineTransformScale(picker.cameraViewTransform, scale, scale);
+        return picker
+
+    }
+    
 }
