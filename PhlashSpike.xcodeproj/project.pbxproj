@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A5BD69AF1D0D7C4E00ADF4DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD69AE1D0D7C4E00ADF4DE /* AppDelegate.swift */; };
+		A5BD69B11D0D7C4E00ADF4DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD69B01D0D7C4E00ADF4DE /* ViewController.swift */; };
+		A5BD69B41D0D7C4E00ADF4DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5BD69B21D0D7C4E00ADF4DE /* Main.storyboard */; };
+		A5BD69B61D0D7C4E00ADF4DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5BD69B51D0D7C4E00ADF4DE /* Assets.xcassets */; };
+		A5BD69B91D0D7C4E00ADF4DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5BD69B71D0D7C4E00ADF4DE /* LaunchScreen.storyboard */; };
+		A5BD69C41D0D7C4E00ADF4DE /* PhlashSpikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD69C31D0D7C4E00ADF4DE /* PhlashSpikeTests.swift */; };
+		A5BD69CF1D0D7C4E00ADF4DE /* PhlashSpikeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD69CE1D0D7C4E00ADF4DE /* PhlashSpikeUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A5BD69C01D0D7C4E00ADF4DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5BD69A31D0D7C4E00ADF4DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5BD69AA1D0D7C4E00ADF4DE;
+			remoteInfo = PhlashSpike;
+		};
+		A5BD69CB1D0D7C4E00ADF4DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5BD69A31D0D7C4E00ADF4DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5BD69AA1D0D7C4E00ADF4DE;
+			remoteInfo = PhlashSpike;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A5BD69AB1D0D7C4E00ADF4DE /* PhlashSpike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhlashSpike.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5BD69AE1D0D7C4E00ADF4DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A5BD69B01D0D7C4E00ADF4DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A5BD69B31D0D7C4E00ADF4DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A5BD69B51D0D7C4E00ADF4DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A5BD69B81D0D7C4E00ADF4DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A5BD69BA1D0D7C4E00ADF4DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5BD69BF1D0D7C4E00ADF4DE /* PhlashSpikeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhlashSpikeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5BD69C31D0D7C4E00ADF4DE /* PhlashSpikeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhlashSpikeTests.swift; sourceTree = "<group>"; };
+		A5BD69C51D0D7C4E00ADF4DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5BD69CA1D0D7C4E00ADF4DE /* PhlashSpikeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhlashSpikeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5BD69CE1D0D7C4E00ADF4DE /* PhlashSpikeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhlashSpikeUITests.swift; sourceTree = "<group>"; };
+		A5BD69D01D0D7C4E00ADF4DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A5BD69A81D0D7C4E00ADF4DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5BD69BC1D0D7C4E00ADF4DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5BD69C71D0D7C4E00ADF4DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A5BD69A21D0D7C4E00ADF4DE = {
+			isa = PBXGroup;
+			children = (
+				A5BD69AD1D0D7C4E00ADF4DE /* PhlashSpike */,
+				A5BD69C21D0D7C4E00ADF4DE /* PhlashSpikeTests */,
+				A5BD69CD1D0D7C4E00ADF4DE /* PhlashSpikeUITests */,
+				A5BD69AC1D0D7C4E00ADF4DE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A5BD69AC1D0D7C4E00ADF4DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A5BD69AB1D0D7C4E00ADF4DE /* PhlashSpike.app */,
+				A5BD69BF1D0D7C4E00ADF4DE /* PhlashSpikeTests.xctest */,
+				A5BD69CA1D0D7C4E00ADF4DE /* PhlashSpikeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A5BD69AD1D0D7C4E00ADF4DE /* PhlashSpike */ = {
+			isa = PBXGroup;
+			children = (
+				A5BD69AE1D0D7C4E00ADF4DE /* AppDelegate.swift */,
+				A5BD69B01D0D7C4E00ADF4DE /* ViewController.swift */,
+				A5BD69B21D0D7C4E00ADF4DE /* Main.storyboard */,
+				A5BD69B51D0D7C4E00ADF4DE /* Assets.xcassets */,
+				A5BD69B71D0D7C4E00ADF4DE /* LaunchScreen.storyboard */,
+				A5BD69BA1D0D7C4E00ADF4DE /* Info.plist */,
+			);
+			path = PhlashSpike;
+			sourceTree = "<group>";
+		};
+		A5BD69C21D0D7C4E00ADF4DE /* PhlashSpikeTests */ = {
+			isa = PBXGroup;
+			children = (
+				A5BD69C31D0D7C4E00ADF4DE /* PhlashSpikeTests.swift */,
+				A5BD69C51D0D7C4E00ADF4DE /* Info.plist */,
+			);
+			path = PhlashSpikeTests;
+			sourceTree = "<group>";
+		};
+		A5BD69CD1D0D7C4E00ADF4DE /* PhlashSpikeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A5BD69CE1D0D7C4E00ADF4DE /* PhlashSpikeUITests.swift */,
+				A5BD69D01D0D7C4E00ADF4DE /* Info.plist */,
+			);
+			path = PhlashSpikeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A5BD69AA1D0D7C4E00ADF4DE /* PhlashSpike */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5BD69D31D0D7C4E00ADF4DE /* Build configuration list for PBXNativeTarget "PhlashSpike" */;
+			buildPhases = (
+				A5BD69A71D0D7C4E00ADF4DE /* Sources */,
+				A5BD69A81D0D7C4E00ADF4DE /* Frameworks */,
+				A5BD69A91D0D7C4E00ADF4DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhlashSpike;
+			productName = PhlashSpike;
+			productReference = A5BD69AB1D0D7C4E00ADF4DE /* PhlashSpike.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A5BD69BE1D0D7C4E00ADF4DE /* PhlashSpikeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5BD69D61D0D7C4E00ADF4DE /* Build configuration list for PBXNativeTarget "PhlashSpikeTests" */;
+			buildPhases = (
+				A5BD69BB1D0D7C4E00ADF4DE /* Sources */,
+				A5BD69BC1D0D7C4E00ADF4DE /* Frameworks */,
+				A5BD69BD1D0D7C4E00ADF4DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A5BD69C11D0D7C4E00ADF4DE /* PBXTargetDependency */,
+			);
+			name = PhlashSpikeTests;
+			productName = PhlashSpikeTests;
+			productReference = A5BD69BF1D0D7C4E00ADF4DE /* PhlashSpikeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A5BD69C91D0D7C4E00ADF4DE /* PhlashSpikeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5BD69D91D0D7C4E00ADF4DE /* Build configuration list for PBXNativeTarget "PhlashSpikeUITests" */;
+			buildPhases = (
+				A5BD69C61D0D7C4E00ADF4DE /* Sources */,
+				A5BD69C71D0D7C4E00ADF4DE /* Frameworks */,
+				A5BD69C81D0D7C4E00ADF4DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A5BD69CC1D0D7C4E00ADF4DE /* PBXTargetDependency */,
+			);
+			name = PhlashSpikeUITests;
+			productName = PhlashSpikeUITests;
+			productReference = A5BD69CA1D0D7C4E00ADF4DE /* PhlashSpikeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A5BD69A31D0D7C4E00ADF4DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Amy Nicholson";
+				TargetAttributes = {
+					A5BD69AA1D0D7C4E00ADF4DE = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					A5BD69BE1D0D7C4E00ADF4DE = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = A5BD69AA1D0D7C4E00ADF4DE;
+					};
+					A5BD69C91D0D7C4E00ADF4DE = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = A5BD69AA1D0D7C4E00ADF4DE;
+					};
+				};
+			};
+			buildConfigurationList = A5BD69A61D0D7C4E00ADF4DE /* Build configuration list for PBXProject "PhlashSpike" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A5BD69A21D0D7C4E00ADF4DE;
+			productRefGroup = A5BD69AC1D0D7C4E00ADF4DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A5BD69AA1D0D7C4E00ADF4DE /* PhlashSpike */,
+				A5BD69BE1D0D7C4E00ADF4DE /* PhlashSpikeTests */,
+				A5BD69C91D0D7C4E00ADF4DE /* PhlashSpikeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A5BD69A91D0D7C4E00ADF4DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5BD69B91D0D7C4E00ADF4DE /* LaunchScreen.storyboard in Resources */,
+				A5BD69B61D0D7C4E00ADF4DE /* Assets.xcassets in Resources */,
+				A5BD69B41D0D7C4E00ADF4DE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5BD69BD1D0D7C4E00ADF4DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5BD69C81D0D7C4E00ADF4DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A5BD69A71D0D7C4E00ADF4DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5BD69B11D0D7C4E00ADF4DE /* ViewController.swift in Sources */,
+				A5BD69AF1D0D7C4E00ADF4DE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5BD69BB1D0D7C4E00ADF4DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5BD69C41D0D7C4E00ADF4DE /* PhlashSpikeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5BD69C61D0D7C4E00ADF4DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5BD69CF1D0D7C4E00ADF4DE /* PhlashSpikeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A5BD69C11D0D7C4E00ADF4DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5BD69AA1D0D7C4E00ADF4DE /* PhlashSpike */;
+			targetProxy = A5BD69C01D0D7C4E00ADF4DE /* PBXContainerItemProxy */;
+		};
+		A5BD69CC1D0D7C4E00ADF4DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5BD69AA1D0D7C4E00ADF4DE /* PhlashSpike */;
+			targetProxy = A5BD69CB1D0D7C4E00ADF4DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A5BD69B21D0D7C4E00ADF4DE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5BD69B31D0D7C4E00ADF4DE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A5BD69B71D0D7C4E00ADF4DE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5BD69B81D0D7C4E00ADF4DE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A5BD69D11D0D7C4E00ADF4DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A5BD69D21D0D7C4E00ADF4DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A5BD69D41D0D7C4E00ADF4DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PhlashSpike/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.briefandtrunk.phlashspike.PhlashSpike;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A5BD69D51D0D7C4E00ADF4DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PhlashSpike/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.briefandtrunk.phlashspike.PhlashSpike;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A5BD69D71D0D7C4E00ADF4DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PhlashSpikeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.briefandtrunk.phlashspike.PhlashSpikeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhlashSpike.app/PhlashSpike";
+			};
+			name = Debug;
+		};
+		A5BD69D81D0D7C4E00ADF4DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PhlashSpikeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.briefandtrunk.phlashspike.PhlashSpikeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhlashSpike.app/PhlashSpike";
+			};
+			name = Release;
+		};
+		A5BD69DA1D0D7C4E00ADF4DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PhlashSpikeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.briefandtrunk.phlashspike.PhlashSpikeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PhlashSpike;
+			};
+			name = Debug;
+		};
+		A5BD69DB1D0D7C4E00ADF4DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PhlashSpikeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.briefandtrunk.phlashspike.PhlashSpikeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PhlashSpike;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A5BD69A61D0D7C4E00ADF4DE /* Build configuration list for PBXProject "PhlashSpike" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5BD69D11D0D7C4E00ADF4DE /* Debug */,
+				A5BD69D21D0D7C4E00ADF4DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5BD69D31D0D7C4E00ADF4DE /* Build configuration list for PBXNativeTarget "PhlashSpike" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5BD69D41D0D7C4E00ADF4DE /* Debug */,
+				A5BD69D51D0D7C4E00ADF4DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A5BD69D61D0D7C4E00ADF4DE /* Build configuration list for PBXNativeTarget "PhlashSpikeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5BD69D71D0D7C4E00ADF4DE /* Debug */,
+				A5BD69D81D0D7C4E00ADF4DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A5BD69D91D0D7C4E00ADF4DE /* Build configuration list for PBXNativeTarget "PhlashSpikeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5BD69DA1D0D7C4E00ADF4DE /* Debug */,
+				A5BD69DB1D0D7C4E00ADF4DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A5BD69A31D0D7C4E00ADF4DE /* Project object */;
+}
