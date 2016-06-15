@@ -11,6 +11,8 @@ import Parse
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    let authentication = Authentication()
+    
     var picker = UIImagePickerController()
     var overlayView:UIView = UIView()
     let screenBounds:CGSize = UIScreen.mainScreen().bounds.size
@@ -123,16 +125,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     func buttonAction(sender: UIButton!) {
+        var twentyFourHoursSince = NSDate()
         if sender == submitButton && emailField.hidden {
             login()
         } else if sender == submitButton {
-            signUp()
+            authentication.signUp(self.usernameField.text!, email: self.emailField.text!, password: self.passwordField.text!)
         } else if sender == loginButton {
             showLoginView()
         } else if sender == signupButton {
             showSignupView()
         } else if sender == logoutButton {
             logout()
+        }
+        
+        if (PFUser.currentUser() != nil) {
+            twentyFourHoursSince = NSDate(timeIntervalSinceReferenceDate: -86400.0)
+            self.hideGreenView()
+            self.defaults.setValue(twentyFourHoursSince, forKey: "lastSeen")
+        } else {
+            showLoginOrSignupScreen()
         }
     }
     
@@ -159,6 +170,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func showSignupView() {
+        print("Signup View")
         usernameField.hidden = false
         passwordField.hidden = false
         submitButton.hidden = false
@@ -387,32 +399,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     
-    
-    func signUp() {
-        let username = self.usernameField.text
-        let email = self.emailField.text
-        let password = self.passwordField.text
-        let twentyFourHoursSince = NSDate(timeIntervalSinceReferenceDate: -86400.0)
-        
-        let user = PFUser()
-        user.username = username!
-        user.password = password!
-        user.email = email!
-        
-        user.signUpInBackgroundWithBlock {
-            (succeeded: Bool, error: NSError?) -> Void in
-            if let error = error {
-                print("Error with singup")
-                _ = error.userInfo["error"] as? NSString
-                // Show the errorString somewhere and let the user try again.
-            } else {
-                // Hooray! Let them use the app now.
-                self.hideGreenView()
-                self.defaults.setValue(twentyFourHoursSince, forKey: "lastSeen")
-            }
-        }
-        
-    }
     
     func login() {
         let username = self.usernameField.text

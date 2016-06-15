@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8CF68D541D107A830047C3AE /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF68D531D107A830047C3AE /* Parse.framework */; };
 		8CF68D561D107AE70047C3AE /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF68D551D107AE70047C3AE /* Bolts.framework */; };
+		8CF68D581D1163040047C3AE /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF68D571D1163040047C3AE /* AuthenticationModel.swift */; };
 		A5BD69AF1D0D7C4E00ADF4DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD69AE1D0D7C4E00ADF4DE /* AppDelegate.swift */; };
 		A5BD69B11D0D7C4E00ADF4DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD69B01D0D7C4E00ADF4DE /* ViewController.swift */; };
 		A5BD69B41D0D7C4E00ADF4DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5BD69B21D0D7C4E00ADF4DE /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		8CF68D531D107A830047C3AE /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		8CF68D551D107AE70047C3AE /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		8CF68D571D1163040047C3AE /* AuthenticationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationModel.swift; sourceTree = "<group>"; };
 		A5BD69AB1D0D7C4E00ADF4DE /* PhlashSpike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhlashSpike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5BD69AE1D0D7C4E00ADF4DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5BD69B01D0D7C4E00ADF4DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				A5BD69B51D0D7C4E00ADF4DE /* Assets.xcassets */,
 				A5BD69B71D0D7C4E00ADF4DE /* LaunchScreen.storyboard */,
 				A5BD69BA1D0D7C4E00ADF4DE /* Info.plist */,
+				8CF68D571D1163040047C3AE /* AuthenticationModel.swift */,
 			);
 			path = PhlashSpike;
 			sourceTree = "<group>";
@@ -249,7 +252,7 @@
 				TargetAttributes = {
 					A5BD69AA1D0D7C4E00ADF4DE = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = MMBSHBYFBS;
+						DevelopmentTeam = U66XP5DAXK;
 					};
 					A5BD69BE1D0D7C4E00ADF4DE = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -313,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CF68D581D1163040047C3AE /* AuthenticationModel.swift in Sources */,
 				A5BD69B11D0D7C4E00ADF4DE /* ViewController.swift in Sources */,
 				A5BD69AF1D0D7C4E00ADF4DE /* AppDelegate.swift in Sources */,
 			);
@@ -456,7 +460,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: ollie.hm@cantab.net (LYTSCJJ2B9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -464,8 +469,9 @@
 				INFOPLIST_FILE = PhlashSpike/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.briefandtrunk.phlashspike.PhlashSpike;
+				PRODUCT_BUNDLE_IDENTIFIER = com.briefandtruck.phlashspike.PhlashSpike;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -473,7 +479,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: ollie.hm@cantab.net (LYTSCJJ2B9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -481,8 +488,9 @@
 				INFOPLIST_FILE = PhlashSpike/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.briefandtrunk.phlashspike.PhlashSpike;
+				PRODUCT_BUNDLE_IDENTIFIER = com.briefandtruck.phlashspike.PhlashSpike;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
