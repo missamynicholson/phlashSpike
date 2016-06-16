@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8405EDF61D13087600DD5921 /* testfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405EDF51D13087600DD5921 /* testfile.swift */; };
-		8405EDF91D13089700DD5921 /* testfile2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405EDF81D13089700DD5921 /* testfile2.swift */; };
-		8405EDFB1D1308CC00DD5921 /* testfile3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405EDFA1D1308CC00DD5921 /* testfile3.swift */; };
 		A5BD69AF1D0D7C4E00ADF4DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD69AE1D0D7C4E00ADF4DE /* AppDelegate.swift */; };
 		A5BD69B41D0D7C4E00ADF4DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5BD69B21D0D7C4E00ADF4DE /* Main.storyboard */; };
 		A5BD69B61D0D7C4E00ADF4DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5BD69B51D0D7C4E00ADF4DE /* Assets.xcassets */; };
@@ -56,9 +53,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8405EDF51D13087600DD5921 /* testfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = testfile.swift; path = ../../../phlash/Phlash/testfile.swift; sourceTree = "<group>"; };
-		8405EDF81D13089700DD5921 /* testfile2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testfile2.swift; sourceTree = "<group>"; };
-		8405EDFA1D1308CC00DD5921 /* testfile3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testfile3.swift; sourceTree = "<group>"; };
 		A5BD69AB1D0D7C4E00ADF4DE /* PhlashSpike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhlashSpike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5BD69AE1D0D7C4E00ADF4DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5BD69B31D0D7C4E00ADF4DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -137,7 +131,6 @@
 				A5CC82221D1284890013310D /* CapturedImageController.swift */,
 				A5CC822A1D1285F10013310D /* PhollowController.swift */,
 				A5CC82241D1284980013310D /* RetrieveImageController.swift */,
-				8405EDFA1D1308CC00DD5921 /* testfile3.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -151,22 +144,6 @@
 				A5CC82201D12847B0013310D /* TheImageView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		8405EDF21D1307BF00DD5921 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				8405EDF51D13087600DD5921 /* testfile.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		8405EDF71D13088900DD5921 /* test */ = {
-			isa = PBXGroup;
-			children = (
-				8405EDF81D13089700DD5921 /* testfile2.swift */,
-			);
-			path = test;
 			sourceTree = "<group>";
 		};
 		A5BD69A21D0D7C4E00ADF4DE = {
@@ -194,9 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				8405EDF01D12B83000DD5921 /* Controllers */,
-				8405EDF21D1307BF00DD5921 /* Helpers */,
 				8405EDF11D12B84E00DD5921 /* Views */,
-				8405EDF71D13088900DD5921 /* test */,
 				A5BD69AE1D0D7C4E00ADF4DE /* AppDelegate.swift */,
 				A5BD69B51D0D7C4E00ADF4DE /* Assets.xcassets */,
 				A5BD69BA1D0D7C4E00ADF4DE /* Info.plist */,
@@ -327,7 +302,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A5BD69A61D0D7C4E00ADF4DE /* Build configuration list for PBXProject "phlashSpike" */;
+			buildConfigurationList = A5BD69A61D0D7C4E00ADF4DE /* Build configuration list for PBXProject "PhlashSpike" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -379,7 +354,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8405EDF91D13089700DD5921 /* testfile2.swift in Sources */,
 				A5CC82171D1284120013310D /* CameraController.swift in Sources */,
 				A5CC821D1D12844F0013310D /* GreenView.swift in Sources */,
 				A5CC82291D1285E40013310D /* PhollowView.swift in Sources */,
@@ -390,8 +364,6 @@
 				A5BD69AF1D0D7C4E00ADF4DE /* AppDelegate.swift in Sources */,
 				A5CC821B1D12842C0013310D /* AuthenticationController.swift in Sources */,
 				A5CC82231D1284890013310D /* CapturedImageController.swift in Sources */,
-				8405EDF61D13087600DD5921 /* testfile.swift in Sources */,
-				8405EDFB1D1308CC00DD5921 /* testfile3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,7 +586,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A5BD69A61D0D7C4E00ADF4DE /* Build configuration list for PBXProject "phlashSpike" */ = {
+		A5BD69A61D0D7C4E00ADF4DE /* Build configuration list for PBXProject "PhlashSpike" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A5BD69D11D0D7C4E00ADF4DE /* Debug */,
