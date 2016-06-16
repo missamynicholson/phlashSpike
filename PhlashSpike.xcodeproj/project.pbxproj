@@ -8,14 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		A5BD69AF1D0D7C4E00ADF4DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD69AE1D0D7C4E00ADF4DE /* AppDelegate.swift */; };
-		A5BD69B11D0D7C4E00ADF4DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD69B01D0D7C4E00ADF4DE /* ViewController.swift */; };
 		A5BD69B41D0D7C4E00ADF4DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5BD69B21D0D7C4E00ADF4DE /* Main.storyboard */; };
 		A5BD69B61D0D7C4E00ADF4DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5BD69B51D0D7C4E00ADF4DE /* Assets.xcassets */; };
 		A5BD69B91D0D7C4E00ADF4DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5BD69B71D0D7C4E00ADF4DE /* LaunchScreen.storyboard */; };
 		A5BD69C41D0D7C4E00ADF4DE /* PhlashSpikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD69C31D0D7C4E00ADF4DE /* PhlashSpikeTests.swift */; };
 		A5BD69CF1D0D7C4E00ADF4DE /* PhlashSpikeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BD69CE1D0D7C4E00ADF4DE /* PhlashSpikeUITests.swift */; };
-		A5BD69E51D0FCBDB00ADF4DE /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5BD69E31D0FCBDB00ADF4DE /* Bolts.framework */; };
-		A5BD69E61D0FCBDB00ADF4DE /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5BD69E41D0FCBDB00ADF4DE /* Parse.framework */; };
 		A5BD69F11D0FCC2E00ADF4DE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5BD69E71D0FCC2E00ADF4DE /* AudioToolbox.framework */; };
 		A5BD69F21D0FCC2E00ADF4DE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5BD69E81D0FCC2E00ADF4DE /* CFNetwork.framework */; };
 		A5BD69F31D0FCC2E00ADF4DE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5BD69E91D0FCC2E00ADF4DE /* CoreGraphics.framework */; };
@@ -24,8 +21,19 @@
 		A5BD69F61D0FCC2E00ADF4DE /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A5BD69EC1D0FCC2E00ADF4DE /* libz.tbd */; };
 		A5BD69F71D0FCC2E00ADF4DE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5BD69ED1D0FCC2E00ADF4DE /* QuartzCore.framework */; };
 		A5BD69F81D0FCC2E00ADF4DE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5BD69EE1D0FCC2E00ADF4DE /* Security.framework */; };
-		A5BD69F91D0FCC2E00ADF4DE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5BD69EF1D0FCC2E00ADF4DE /* StoreKit.framework */; };
 		A5BD69FA1D0FCC2E00ADF4DE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5BD69F01D0FCC2E00ADF4DE /* SystemConfiguration.framework */; };
+		A5CC82171D1284120013310D /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC82161D1284120013310D /* CameraController.swift */; };
+		A5CC821B1D12842C0013310D /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC821A1D12842C0013310D /* AuthenticationController.swift */; };
+		A5CC821D1D12844F0013310D /* GreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC821C1D12844F0013310D /* GreenView.swift */; };
+		A5CC821F1D1284600013310D /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC821E1D1284600013310D /* CameraView.swift */; };
+		A5CC82211D12847B0013310D /* CapturedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC82201D12847B0013310D /* CapturedImageView.swift */; };
+		A5CC82231D1284890013310D /* CapturedImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC82221D1284890013310D /* CapturedImageController.swift */; };
+		A5CC82251D1284980013310D /* RetrieveImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC82241D1284980013310D /* RetrieveImageController.swift */; };
+		A5CC82271D1284A90013310D /* RetrieveImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC82261D1284A90013310D /* RetrieveImageView.swift */; };
+		A5CC82291D1285E40013310D /* PhollowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC82281D1285E40013310D /* PhollowView.swift */; };
+		A5CC822B1D1285F10013310D /* PhollowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC822A1D1285F10013310D /* PhollowController.swift */; };
+		A5CC822E1D1293B20013310D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5CC822C1D1293B20013310D /* Bolts.framework */; };
+		A5CC822F1D1293B20013310D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5CC822D1D1293B20013310D /* Parse.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +56,6 @@
 /* Begin PBXFileReference section */
 		A5BD69AB1D0D7C4E00ADF4DE /* PhlashSpike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhlashSpike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5BD69AE1D0D7C4E00ADF4DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A5BD69B01D0D7C4E00ADF4DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A5BD69B31D0D7C4E00ADF4DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5BD69B51D0D7C4E00ADF4DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5BD69B81D0D7C4E00ADF4DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,8 +66,6 @@
 		A5BD69CA1D0D7C4E00ADF4DE /* PhlashSpikeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhlashSpikeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5BD69CE1D0D7C4E00ADF4DE /* PhlashSpikeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhlashSpikeUITests.swift; sourceTree = "<group>"; };
 		A5BD69D01D0D7C4E00ADF4DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5BD69E31D0FCBDB00ADF4DE /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		A5BD69E41D0FCBDB00ADF4DE /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A5BD69E71D0FCC2E00ADF4DE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A5BD69E81D0FCC2E00ADF4DE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		A5BD69E91D0FCC2E00ADF4DE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -69,8 +74,19 @@
 		A5BD69EC1D0FCC2E00ADF4DE /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		A5BD69ED1D0FCC2E00ADF4DE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A5BD69EE1D0FCC2E00ADF4DE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		A5BD69EF1D0FCC2E00ADF4DE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A5BD69F01D0FCC2E00ADF4DE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A5CC82161D1284120013310D /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		A5CC821A1D12842C0013310D /* AuthenticationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
+		A5CC821C1D12844F0013310D /* GreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenView.swift; sourceTree = "<group>"; };
+		A5CC821E1D1284600013310D /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		A5CC82201D12847B0013310D /* CapturedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturedImageView.swift; sourceTree = "<group>"; };
+		A5CC82221D1284890013310D /* CapturedImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturedImageController.swift; sourceTree = "<group>"; };
+		A5CC82241D1284980013310D /* RetrieveImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrieveImageController.swift; sourceTree = "<group>"; };
+		A5CC82261D1284A90013310D /* RetrieveImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrieveImageView.swift; sourceTree = "<group>"; };
+		A5CC82281D1285E40013310D /* PhollowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhollowView.swift; sourceTree = "<group>"; };
+		A5CC822A1D1285F10013310D /* PhollowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhollowController.swift; sourceTree = "<group>"; };
+		A5CC822C1D1293B20013310D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		A5CC822D1D1293B20013310D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,10 +102,9 @@
 				A5BD69F61D0FCC2E00ADF4DE /* libz.tbd in Frameworks */,
 				A5BD69F71D0FCC2E00ADF4DE /* QuartzCore.framework in Frameworks */,
 				A5BD69F81D0FCC2E00ADF4DE /* Security.framework in Frameworks */,
-				A5BD69F91D0FCC2E00ADF4DE /* StoreKit.framework in Frameworks */,
+				A5CC822E1D1293B20013310D /* Bolts.framework in Frameworks */,
+				A5CC822F1D1293B20013310D /* Parse.framework in Frameworks */,
 				A5BD69FA1D0FCC2E00ADF4DE /* SystemConfiguration.framework in Frameworks */,
-				A5BD69E61D0FCBDB00ADF4DE /* Parse.framework in Frameworks */,
-				A5BD69E51D0FCBDB00ADF4DE /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,11 +150,20 @@
 			isa = PBXGroup;
 			children = (
 				A5BD69AE1D0D7C4E00ADF4DE /* AppDelegate.swift */,
-				A5BD69B01D0D7C4E00ADF4DE /* ViewController.swift */,
 				A5BD69B21D0D7C4E00ADF4DE /* Main.storyboard */,
 				A5BD69B51D0D7C4E00ADF4DE /* Assets.xcassets */,
 				A5BD69B71D0D7C4E00ADF4DE /* LaunchScreen.storyboard */,
 				A5BD69BA1D0D7C4E00ADF4DE /* Info.plist */,
+				A5CC82161D1284120013310D /* CameraController.swift */,
+				A5CC821A1D12842C0013310D /* AuthenticationController.swift */,
+				A5CC821C1D12844F0013310D /* GreenView.swift */,
+				A5CC821E1D1284600013310D /* CameraView.swift */,
+				A5CC82201D12847B0013310D /* CapturedImageView.swift */,
+				A5CC82221D1284890013310D /* CapturedImageController.swift */,
+				A5CC82241D1284980013310D /* RetrieveImageController.swift */,
+				A5CC82261D1284A90013310D /* RetrieveImageView.swift */,
+				A5CC82281D1285E40013310D /* PhollowView.swift */,
+				A5CC822A1D1285F10013310D /* PhollowController.swift */,
 			);
 			path = PhlashSpike;
 			sourceTree = "<group>";
@@ -165,6 +189,8 @@
 		A5BD69E21D0FCB7000ADF4DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A5CC822C1D1293B20013310D /* Bolts.framework */,
+				A5CC822D1D1293B20013310D /* Parse.framework */,
 				A5BD69E71D0FCC2E00ADF4DE /* AudioToolbox.framework */,
 				A5BD69E81D0FCC2E00ADF4DE /* CFNetwork.framework */,
 				A5BD69E91D0FCC2E00ADF4DE /* CoreGraphics.framework */,
@@ -173,10 +199,7 @@
 				A5BD69EC1D0FCC2E00ADF4DE /* libz.tbd */,
 				A5BD69ED1D0FCC2E00ADF4DE /* QuartzCore.framework */,
 				A5BD69EE1D0FCC2E00ADF4DE /* Security.framework */,
-				A5BD69EF1D0FCC2E00ADF4DE /* StoreKit.framework */,
 				A5BD69F01D0FCC2E00ADF4DE /* SystemConfiguration.framework */,
-				A5BD69E31D0FCBDB00ADF4DE /* Bolts.framework */,
-				A5BD69E41D0FCBDB00ADF4DE /* Parse.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -250,6 +273,11 @@
 					A5BD69AA1D0D7C4E00ADF4DE = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = MMBSHBYFBS;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					A5BD69BE1D0D7C4E00ADF4DE = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -313,8 +341,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5BD69B11D0D7C4E00ADF4DE /* ViewController.swift in Sources */,
+				A5CC82171D1284120013310D /* CameraController.swift in Sources */,
+				A5CC82271D1284A90013310D /* RetrieveImageView.swift in Sources */,
+				A5CC821D1D12844F0013310D /* GreenView.swift in Sources */,
+				A5CC82291D1285E40013310D /* PhollowView.swift in Sources */,
+				A5CC82251D1284980013310D /* RetrieveImageController.swift in Sources */,
+				A5CC821F1D1284600013310D /* CameraView.swift in Sources */,
+				A5CC822B1D1285F10013310D /* PhollowController.swift in Sources */,
+				A5CC82211D12847B0013310D /* CapturedImageView.swift in Sources */,
 				A5BD69AF1D0D7C4E00ADF4DE /* AppDelegate.swift in Sources */,
+				A5CC821B1D12842C0013310D /* AuthenticationController.swift in Sources */,
+				A5CC82231D1284890013310D /* CapturedImageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,6 +588,7 @@
 				A5BD69D51D0D7C4E00ADF4DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5BD69D61D0D7C4E00ADF4DE /* Build configuration list for PBXNativeTarget "PhlashSpikeTests" */ = {
 			isa = XCConfigurationList;
@@ -559,6 +597,7 @@
 				A5BD69D81D0D7C4E00ADF4DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5BD69D91D0D7C4E00ADF4DE /* Build configuration list for PBXNativeTarget "PhlashSpikeUITests" */ = {
 			isa = XCConfigurationList;
@@ -567,6 +606,7 @@
 				A5BD69DB1D0D7C4E00ADF4DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
