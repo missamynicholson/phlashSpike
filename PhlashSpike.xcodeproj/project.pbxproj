@@ -146,6 +146,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		8405EDF21D1307BF00DD5921 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		A5BD69A21D0D7C4E00ADF4DE = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +177,7 @@
 		A5BD69AD1D0D7C4E00ADF4DE /* PhlashSpike */ = {
 			isa = PBXGroup;
 			children = (
+				8405EDF21D1307BF00DD5921 /* Helpers */,
 				8405EDF01D12B83000DD5921 /* Controllers */,
 				8405EDF11D12B84E00DD5921 /* Views */,
 				A5BD69AE1D0D7C4E00ADF4DE /* AppDelegate.swift */,
@@ -302,7 +310,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A5BD69A61D0D7C4E00ADF4DE /* Build configuration list for PBXProject "phlashSpike" */;
+			buildConfigurationList = A5BD69A61D0D7C4E00ADF4DE /* Build configuration list for PBXProject "PhlashSpike" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -586,7 +594,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A5BD69A61D0D7C4E00ADF4DE /* Build configuration list for PBXProject "phlashSpike" */ = {
+		A5BD69A61D0D7C4E00ADF4DE /* Build configuration list for PBXProject "PhlashSpike" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A5BD69D11D0D7C4E00ADF4DE /* Debug */,
