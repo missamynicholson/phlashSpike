@@ -19,6 +19,7 @@ class CapturedImageController: UIViewController {
     var capturedImage : UIImage?
     var delegate:CapturedImageControllerDelegate? = nil
     let screenBounds:CGSize = UIScreen.mainScreen().bounds.size
+
     
     
     override func viewDidLoad() {
@@ -34,13 +35,15 @@ class CapturedImageController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         setImage()
+        
     }
     
     
     func setImage() {
         if let image = capturedImage {
-            view.addSubview(getNewImageView(image))
-            //sendPhoto(image)
+            let imageView = TheImageView(frame: CGRect(x: getXValue(image), y: 0, width: getNewWidth(image), height: screenBounds.height))
+            self.view.addSubview(imageView)
+            imageView.image = image
             delay(3.0) {
                 self.delegate?.capturedImageControllerDismiss()
             }
@@ -50,7 +53,17 @@ class CapturedImageController: UIViewController {
     }
 
     
-    //captured photo manipulation
+    //HELPER
+    func getXValue(image: UIImage) -> CGFloat {
+        let newWidth = getNewWidth(image)
+        
+        return -(newWidth-screenBounds.width)/2
+    }
+    
+    func getNewWidth(image: UIImage) -> CGFloat {
+        let newWidth:CGFloat = image.size.width/(image.size.height/screenBounds.height)
+        return newWidth
+    }
     
     func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
         
@@ -63,6 +76,18 @@ class CapturedImageController: UIViewController {
         
         return newImage
     }
+    //HELPER
+
+    
+    
+    
+    
+    
+
+    
+    //captured photo manipulation
+    
+
     //captured photo manipulation
     
     
@@ -95,6 +120,7 @@ class CapturedImageController: UIViewController {
             }
         }
     }
+    //database
     
    
     func delay(delay:Double, closure:()->()) {
@@ -105,28 +131,6 @@ class CapturedImageController: UIViewController {
             ),
             dispatch_get_main_queue(), closure)
     }
-    
-    func getNewImageView(image: UIImage) -> UIImageView {
-        let imageView:UIImageView = UIImageView()
-        var xValue:CGFloat
-        
-        let newWidth = getNewWidth(image)
-        
-    
-        xValue = -(newWidth-screenBounds.width)/2
-        
-        imageView.frame = CGRect(x: xValue, y: 0, width: newWidth, height: screenBounds.height)
-        imageView.image = resizeImage(image, newWidth: newWidth)
-        
-        return imageView
-    }
-    
-    func getNewWidth(image: UIImage) -> CGFloat {
-        let newWidth:CGFloat = image.size.width/(image.size.height/screenBounds.height)
-        return newWidth
-    }
-
-    
 }
 
 

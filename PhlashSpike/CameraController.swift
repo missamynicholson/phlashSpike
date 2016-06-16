@@ -113,5 +113,9 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         self.picker.dismissViewControllerAnimated(true, completion: nil);
     }
 
+    func retrievedImageControllerDismiss() {
+        self.picker.dismissViewControllerAnimated(true, completion: nil);
+    }
+
 }
 

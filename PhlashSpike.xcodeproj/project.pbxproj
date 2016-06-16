@@ -26,10 +26,9 @@
 		A5CC821B1D12842C0013310D /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC821A1D12842C0013310D /* AuthenticationController.swift */; };
 		A5CC821D1D12844F0013310D /* GreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC821C1D12844F0013310D /* GreenView.swift */; };
 		A5CC821F1D1284600013310D /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC821E1D1284600013310D /* CameraView.swift */; };
-		A5CC82211D12847B0013310D /* CapturedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC82201D12847B0013310D /* CapturedImageView.swift */; };
+		A5CC82211D12847B0013310D /* TheImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC82201D12847B0013310D /* TheImageView.swift */; };
 		A5CC82231D1284890013310D /* CapturedImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC82221D1284890013310D /* CapturedImageController.swift */; };
 		A5CC82251D1284980013310D /* RetrieveImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC82241D1284980013310D /* RetrieveImageController.swift */; };
-		A5CC82271D1284A90013310D /* RetrieveImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC82261D1284A90013310D /* RetrieveImageView.swift */; };
 		A5CC82291D1285E40013310D /* PhollowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC82281D1285E40013310D /* PhollowView.swift */; };
 		A5CC822B1D1285F10013310D /* PhollowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC822A1D1285F10013310D /* PhollowController.swift */; };
 		A5CC822E1D1293B20013310D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5CC822C1D1293B20013310D /* Bolts.framework */; };
@@ -79,10 +78,9 @@
 		A5CC821A1D12842C0013310D /* AuthenticationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
 		A5CC821C1D12844F0013310D /* GreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenView.swift; sourceTree = "<group>"; };
 		A5CC821E1D1284600013310D /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
-		A5CC82201D12847B0013310D /* CapturedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturedImageView.swift; sourceTree = "<group>"; };
+		A5CC82201D12847B0013310D /* TheImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheImageView.swift; sourceTree = "<group>"; };
 		A5CC82221D1284890013310D /* CapturedImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturedImageController.swift; sourceTree = "<group>"; };
 		A5CC82241D1284980013310D /* RetrieveImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrieveImageController.swift; sourceTree = "<group>"; };
-		A5CC82261D1284A90013310D /* RetrieveImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrieveImageView.swift; sourceTree = "<group>"; };
 		A5CC82281D1285E40013310D /* PhollowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhollowView.swift; sourceTree = "<group>"; };
 		A5CC822A1D1285F10013310D /* PhollowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhollowController.swift; sourceTree = "<group>"; };
 		A5CC822C1D1293B20013310D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -141,8 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				A5CC82281D1285E40013310D /* PhollowView.swift */,
-				A5CC82261D1284A90013310D /* RetrieveImageView.swift */,
-				A5CC82201D12847B0013310D /* CapturedImageView.swift */,
+				A5CC82201D12847B0013310D /* TheImageView.swift */,
 				A5CC821E1D1284600013310D /* CameraView.swift */,
 				A5CC821C1D12844F0013310D /* GreenView.swift */,
 			);
@@ -358,13 +355,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5CC82171D1284120013310D /* CameraController.swift in Sources */,
-				A5CC82271D1284A90013310D /* RetrieveImageView.swift in Sources */,
 				A5CC821D1D12844F0013310D /* GreenView.swift in Sources */,
 				A5CC82291D1285E40013310D /* PhollowView.swift in Sources */,
 				A5CC82251D1284980013310D /* RetrieveImageController.swift in Sources */,
 				A5CC821F1D1284600013310D /* CameraView.swift in Sources */,
 				A5CC822B1D1285F10013310D /* PhollowController.swift in Sources */,
-				A5CC82211D12847B0013310D /* CapturedImageView.swift in Sources */,
+				A5CC82211D12847B0013310D /* TheImageView.swift in Sources */,
 				A5BD69AF1D0D7C4E00ADF4DE /* AppDelegate.swift in Sources */,
 				A5CC821B1D12842C0013310D /* AuthenticationController.swift in Sources */,
 				A5CC82231D1284890013310D /* CapturedImageController.swift in Sources */,
