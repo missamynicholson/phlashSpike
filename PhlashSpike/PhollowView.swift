@@ -9,17 +9,20 @@
 import UIKit
 
 class PhollowView: UIView {
+    
+    var usernameField = UITextField()
+    var submitButton = UIButton()
+    var cancelButton = UIButton()
 
     let screenBounds: CGSize = UIScreen.mainScreen().bounds.size
     let backgroundGreen: UIColor = UIColor( red: CGFloat(62/255.0), green: CGFloat(200/255.0), blue: CGFloat(172/255.0), alpha: CGFloat(0.75))
-    let usernameField = UITextField()
-    let whiteColor = UIColor.whiteColor()
-    let submitButton = UIButton()
-    let cancelButton = UIButton()
     
     override init(frame: CGRect) {
         super.init(frame:frame)
         buildPhollowView()
+        addUsernameField()
+        addSubmitButton()
+        addCancelButton()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,22 +32,30 @@ class PhollowView: UIView {
     func buildPhollowView() {
         frame = CGRect(x: 0, y: 0, width: screenBounds.width, height: screenBounds.height)
         backgroundColor = backgroundGreen
-        
+    }
+    
+    func addUsernameField() {
+        let usernameField = UITextField()
         usernameField.frame = CGRect(x: 0, y: screenBounds.height/8, width: screenBounds.width, height: screenBounds.height/15)
-        usernameField.backgroundColor = UIColor.colorWithAlphaComponent(whiteColor)(0.5)
+        usernameField.backgroundColor = UIColor.colorWithAlphaComponent(.whiteColor())(0.5)
         usernameField.placeholder = "Username"
         usernameField.textAlignment = .Center
-        
+        addSubview(usernameField)
+    }
+    
+    func addSubmitButton() {
+        let submitButton = UIButton()
         submitButton.frame = CGRect(x: screenBounds.width/4, y: screenBounds.height/2, width: screenBounds.width/2, height: 30)
         submitButton.setTitleColor(.whiteColor(), forState: .Normal)
         submitButton.setTitle("Submit", forState: .Normal)
-        
+        addSubview(submitButton)
+    }
+    
+    func addCancelButton() {
+        let cancelButton = UIButton()
         cancelButton.frame = CGRect(x: screenBounds.width*4/5, y: 20, width: screenBounds.width/5, height: 30)
         cancelButton.setTitleColor(.whiteColor(), forState: .Normal)
         cancelButton.setTitle("Cancel", forState: .Normal)
-        
-        addSubview(usernameField)
-        addSubview(submitButton)
         addSubview(cancelButton)
     }
 }

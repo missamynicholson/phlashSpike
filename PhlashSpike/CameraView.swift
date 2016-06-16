@@ -47,7 +47,7 @@ class CameraView: UIView {
     }
     
     func addPhollowButton() {
-        phollowButton.frame = CGRect(x: screenBounds.width/5, y: 20, width: screenBounds.width/5, height: 30)
+        phollowButton.frame = CGRect(x: 0, y: 20, width: screenBounds.width/5, height: 30)
         phollowButton.setTitleColor(.whiteColor(), forState: .Normal)
         phollowButton.setTitle("Phollow", forState: .Normal)
         addSubview(phollowButton)

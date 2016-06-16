@@ -10,10 +10,6 @@ import Foundation
 import UIKit
 import Parse
 
-protocol AuthenticationControllerDelegate {
-    func authenticationControllerDismiss()
-}
-
 
 class AuthenticationController: UIViewController {
     
@@ -28,20 +24,16 @@ class AuthenticationController: UIViewController {
     
     let defaults = NSUserDefaults.standardUserDefaults()
     
-    var delegate: AuthenticationControllerDelegate? = nil
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view = greenView
-        submitButton = greenView.submitButton
-        loginButton = greenView.loginButton
-        signupButton = greenView.signupButton
-        usernameField = greenView.usernameField
-        emailField = greenView.emailField
-        passwordField = greenView.passwordField
-        
-        self.delegate?.authenticationControllerDismiss()
+            self.view = greenView
+            submitButton = greenView.submitButton
+            loginButton = greenView.loginButton
+            signupButton = greenView.signupButton
+            usernameField = greenView.usernameField
+            emailField = greenView.emailField
+            passwordField = greenView.passwordField
     }
     
     override func didReceiveMemoryWarning() {
@@ -69,46 +61,23 @@ class AuthenticationController: UIViewController {
         }
     }
     
-    
+    func login() {
+        let username = usernameField.text
+        let password = passwordField.text
+        UserAuthentication().login(username!, password: password!)
+    }
     
     func signUp() {
         let username = usernameField.text
         let email = emailField.text
         let password = passwordField.text
-        let twentyFourHoursSince = NSDate(timeIntervalSinceReferenceDate: -86400.0)
-        
-        let user = PFUser()
-        user.username = username!
-        user.password = password!
-        user.email = email!
-        
-        user.signUpInBackgroundWithBlock {
-            (succeeded: Bool, error: NSError?) -> Void in
-            if let error = error {
-                let errorMessage = error.userInfo["error"] as? NSString
-                print("Error with singup \(errorMessage)")
-            } else {
-                self.delegate?.authenticationControllerDismiss()
-                self.defaults.setValue(twentyFourHoursSince, forKey: "lastSeen")
-            }
-        }
-        
+        UserAuthentication().signUp(username!, email: email!, password: password!)
     }
     
-    func login() {
-        let username = usernameField.text
-        let password = passwordField.text
-        PFUser.logInWithUsernameInBackground(username!, password:password!) {
-            (user: PFUser?, error: NSError?) -> Void in
-            if user != nil {
-                self.delegate?.authenticationControllerDismiss()
-            } else {
-                print("Error: \(error!) \(error!.userInfo)")
-            }
-        }
+    func reset() {
+        let email = emailField.text
+        UserAuthentication().getResetLink(email!)
     }
     
-    func getResetLink() {
-        PFUser.requestPasswordResetForEmailInBackground("email@example.com")
-    }
+   
 }

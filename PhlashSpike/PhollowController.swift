@@ -10,10 +10,6 @@ import Foundation
 import UIKit
 import Parse
 
-protocol PhollowControllerDelegate {
-    func phollowControllerDismiss()
-}
-
 class PhollowController: UIViewController {
     
     let phollowView = PhollowView()
@@ -22,7 +18,6 @@ class PhollowController: UIViewController {
     var submitButton = UIButton()
     var cancelButton = UIButton()
     
-    var delegate: PhollowControllerDelegate? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +29,6 @@ class PhollowController: UIViewController {
         
         phollowView.submitButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
         phollowView.cancelButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
-        self.delegate?.phollowControllerDismiss()
     }
     
     override func didReceiveMemoryWarning() {
@@ -48,32 +42,8 @@ class PhollowController: UIViewController {
     
     func buttonAction(sender: UIButton!) {
         if sender == submitButton {
-            phollow(usernameField.text!)
-            self.delegate?.phollowControllerDismiss()
-        } else {
-            self.delegate?.phollowControllerDismiss()
+            PhollowSomeone().phollow(usernameField.text!)
         }
-    }
-    
-    func phollow(toUsername: String) {
-        let currentUser = PFUser.currentUser()
-        guard let checkedUser = currentUser else {
-            print ("Checked User  is nil")
-            return
-        }
-        
-        let phollow = PFObject(className:"Phollow")
-        phollow["fromUsername"] = checkedUser.username
-        phollow["toUsername"] = toUsername
-        phollow.saveInBackgroundWithBlock {
-            (success: Bool, error: NSError?) -> Void in
-            if (success) {
-                let currentInstallation = PFInstallation.currentInstallation()
-                currentInstallation.addUniqueObject(toUsername, forKey: "channels")
-                currentInstallation.saveInBackground()
-            } else  {
-                print("Error: \(error!) \(error!.userInfo)")
-            }
-        }
+        performSegueWithIdentifier("backToCamera", sender: self)
     }
 }
