@@ -12,6 +12,34 @@ import Parse
 
 class PhollowController: UIViewController {
     
+    let phollowView = PhollowView()
+    
+    var usernameField = UITextField()
+    var submitButton = UIButton()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        self.view.addSubview(phollowView)
+        usernameField = phollowView.usernameField
+        submitButton = phollowView.submitButton
+        
+        phollowView.submitButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    func buttonAction(sender: UIButton!) {
+        phollow(usernameField.text!)
+    }
+    
     func phollow(toUsername: String) {
         let currentUser = PFUser.currentUser()
         guard let checkedUser = currentUser else {

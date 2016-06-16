@@ -29,13 +29,12 @@ class AuthenticationController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.view.addSubview(greenView)
         submitButton = greenView.submitButton
-        loginButton = greenView.submitButton
-        signupButton = greenView.submitButton
+        loginButton = greenView.loginButton
+        signupButton = greenView.signupButton
         usernameField = greenView.usernameField
         emailField = greenView.emailField
         passwordField = greenView.passwordField
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -44,7 +43,7 @@ class AuthenticationController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-       greenView.submitButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
+        greenView.submitButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
         greenView.loginButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
         greenView.signupButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
     }

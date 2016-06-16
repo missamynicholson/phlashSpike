@@ -10,12 +10,35 @@ import UIKit
 
 class PhollowView: UIView {
 
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
+    let screenBounds: CGSize = UIScreen.mainScreen().bounds.size
+    let backgroundGreen: UIColor = UIColor( red: CGFloat(62/255.0), green: CGFloat(200/255.0), blue: CGFloat(172/255.0), alpha: CGFloat(0.75))
+    let usernameField = UITextField()
+    let whiteColor = UIColor.whiteColor()
+    let submitButton = UIButton()
 
+    override init(frame: CGRect) {
+        super.init(frame:frame)
+        buildPhollowView()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+        func buildPhollowView() {
+        frame = CGRect(x: 0, y: 0, width: screenBounds.width, height: screenBounds.height)
+        backgroundColor = backgroundGreen
+        
+        usernameField.frame = CGRect(x: 0, y: screenBounds.height/8, width: screenBounds.width, height: screenBounds.height/15)
+        usernameField.backgroundColor = UIColor.colorWithAlphaComponent(whiteColor)(0.5)
+        usernameField.placeholder = "Username"
+        usernameField.textAlignment = .Center
+        
+        submitButton.frame = CGRect(x: screenBounds.width/4, y: screenBounds.height/2, width: screenBounds.width/2, height: 30)
+        submitButton.setTitleColor(.whiteColor(), forState: .Normal)
+        submitButton.setTitle("Submit", forState: .Normal)
+        
+        addSubview(usernameField)
+        addSubview(submitButton)
+    }
 }
