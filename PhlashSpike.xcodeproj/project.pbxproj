@@ -34,6 +34,8 @@
 		A5CC822B1D1285F10013310D /* PhollowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC822A1D1285F10013310D /* PhollowController.swift */; };
 		A5CC822E1D1293B20013310D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5CC822C1D1293B20013310D /* Bolts.framework */; };
 		A5CC822F1D1293B20013310D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5CC822D1D1293B20013310D /* Parse.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		A5CC82351D1316440013310D /* ImageViewFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC82341D1316440013310D /* ImageViewFrame.swift */; };
+		A5CC82371D1317AA0013310D /* ResizeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC82361D1317AA0013310D /* ResizeImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		A5CC822A1D1285F10013310D /* PhollowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhollowController.swift; sourceTree = "<group>"; };
 		A5CC822C1D1293B20013310D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A5CC822D1D1293B20013310D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		A5CC82341D1316440013310D /* ImageViewFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewFrame.swift; sourceTree = "<group>"; };
+		A5CC82361D1317AA0013310D /* ResizeImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResizeImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				8405EDFD1D130E3E00DD5921 /* Delay.swift */,
+				A5CC82341D1316440013310D /* ImageViewFrame.swift */,
+				A5CC82361D1317AA0013310D /* ResizeImage.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -296,7 +302,7 @@
 				TargetAttributes = {
 					A5BD69AA1D0D7C4E00ADF4DE = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 24T7JPRRUH;
+						DevelopmentTeam = MMBSHBYFBS;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 0;
@@ -373,7 +379,9 @@
 				A5CC821F1D1284600013310D /* CameraView.swift in Sources */,
 				A5CC822B1D1285F10013310D /* PhollowController.swift in Sources */,
 				A5CC82211D12847B0013310D /* TheImageView.swift in Sources */,
+				A5CC82351D1316440013310D /* ImageViewFrame.swift in Sources */,
 				A5BD69AF1D0D7C4E00ADF4DE /* AppDelegate.swift in Sources */,
+				A5CC82371D1317AA0013310D /* ResizeImage.swift in Sources */,
 				A5CC821B1D12842C0013310D /* AuthenticationController.swift in Sources */,
 				A5CC82231D1284890013310D /* CapturedImageController.swift in Sources */,
 			);

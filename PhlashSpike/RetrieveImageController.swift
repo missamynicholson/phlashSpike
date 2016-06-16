@@ -38,35 +38,12 @@ class RetrieveImageController: UIViewController {
     
     func displayPhlash() {
         
-        let imageView = TheImageView(frame: CGRect(x: getXValue(phlashImage), y: 0, width: getNewWidth(phlashImage), height: screenBounds.height))
+        let imageView = TheImageView(frame: CGRect(x: ImageViewFrame().getXValue(phlashImage), y: 0, width:  ImageViewFrame().getNewWidth(phlashImage), height: screenBounds.height))
         self.view.addSubview(imageView)
-        imageView.image = phlashImage
+        imageView.image = ResizeImage().resizeImage(phlashImage, newWidth: ImageViewFrame().getNewWidth(phlashImage))
         Delay().run(3.0){
             self.delegate?.retrieveImageControllerDismiss()
         }
-    }
-
-    func getXValue(image: UIImage) -> CGFloat {
-        let newWidth = getNewWidth(image)
-        
-        return -(newWidth-screenBounds.width)/2
-    }
-    
-    func getNewWidth(image: UIImage) -> CGFloat {
-        let newWidth:CGFloat = image.size.width/(image.size.height/screenBounds.height)
-        return newWidth
-    }
-    
-    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
-        
-        let newSize: CGSize = CGSizeMake(newWidth, screenBounds.height)
-        let rect = CGRectMake(0, 0, newSize.width, newSize.height)
-        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
-        image.drawInRect(rect)
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return newImage
     }
 
 }

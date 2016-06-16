@@ -82,14 +82,12 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         if self.phlashesArray.count < 1 {
             queryDatabaseForPhotos()
         } else {
-            print("arrived here")
             let firstPhlash = phlashesArray.first
             let userImageFile = firstPhlash!["file"] as! PFFile
             userImageFile.getDataInBackgroundWithBlock {
                 (imageData: NSData?, error: NSError?) -> Void in
                 if error == nil {
                     if let imageData = imageData {
-                        print("arrived here second")
                         let image = UIImage(data:imageData)
                         
                         self.retrieveImageController.phlashImage = image!
