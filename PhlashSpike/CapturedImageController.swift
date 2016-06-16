@@ -45,7 +45,7 @@ class CapturedImageController: UIViewController {
             self.view = imageView
             imageView.image = resizeImage(image, newWidth: getNewWidth(image))
             //sendPhoto(resizeImage(image, newWidth: getNewWidth(image)))
-            delay(3.0) {
+            Delay().run(3.0) {
                 print("here")
                 self.delegate?.capturedImageControllerDismiss()
             }
@@ -78,6 +78,7 @@ class CapturedImageController: UIViewController {
         
         return newImage
     }
+    
     //HELPER
     
     //database//
@@ -110,16 +111,4 @@ class CapturedImageController: UIViewController {
         }
     }
     //database
-    
-   
-    func delay(delay:Double, closure:()->()) {
-        dispatch_after(
-            dispatch_time(
-                DISPATCH_TIME_NOW,
-                Int64(delay * Double(NSEC_PER_SEC))
-            ),
-            dispatch_get_main_queue(), closure)
-    }
-}
-
-
+   }

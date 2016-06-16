@@ -36,28 +36,16 @@ class RetrieveImageController: UIViewController {
         displayPhlash()
     }
     
-    
     func displayPhlash() {
         
         let imageView = TheImageView(frame: CGRect(x: getXValue(phlashImage), y: 0, width: getNewWidth(phlashImage), height: screenBounds.height))
         self.view.addSubview(imageView)
         imageView.image = phlashImage
-        delay(3.0) {
+        Delay().run(3.0){
             self.delegate?.retrieveImageControllerDismiss()
         }
     }
 
-
-
-    func delay(delay:Double, closure:()->()) {
-        dispatch_after(
-            dispatch_time(
-                DISPATCH_TIME_NOW,
-                Int64(delay * Double(NSEC_PER_SEC))
-            ),
-            dispatch_get_main_queue(), closure)
-    }
-    
     func getXValue(image: UIImage) -> CGFloat {
         let newWidth = getNewWidth(image)
         

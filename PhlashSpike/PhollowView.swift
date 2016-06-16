@@ -39,9 +39,9 @@ class PhollowView: UIView {
         submitButton.setTitleColor(.whiteColor(), forState: .Normal)
         submitButton.setTitle("Submit", forState: .Normal)
         
-        cancelButton.frame = CGRect(x: screenBounds.width*4/5, y: 20, width: screenBounds.width/2, height: 30)
+        cancelButton.frame = CGRect(x: screenBounds.width*4/5, y: 20, width: screenBounds.width/5, height: 30)
         cancelButton.setTitleColor(.whiteColor(), forState: .Normal)
-        cancelButton.setTitle("Submit", forState: .Normal)
+        cancelButton.setTitle("Cancel", forState: .Normal)
         
         addSubview(usernameField)
         addSubview(submitButton)

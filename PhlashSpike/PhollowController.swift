@@ -33,7 +33,7 @@ class PhollowController: UIViewController {
         cancelButton = phollowView.cancelButton
         
         phollowView.submitButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
-         phollowView.cancelButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
+        phollowView.cancelButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
         self.delegate?.phollowControllerDismiss()
     }
     
@@ -49,6 +49,7 @@ class PhollowController: UIViewController {
     func buttonAction(sender: UIButton!) {
         if sender == submitButton {
             phollow(usernameField.text!)
+            self.delegate?.phollowControllerDismiss()
         } else {
             self.delegate?.phollowControllerDismiss()
         }

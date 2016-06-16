@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C73195EA867705DC474C61C8AAD2A676C1C9E726",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "25FA26DA0170F5821FD3BE13DB391AF5B09EA6B2" : 0,
+    "C73195EA867705DC474C61C8AAD2A676C1C9E726" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "CE68F6BE-2BBB-4345-89CE-116BE395445E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "25FA26DA0170F5821FD3BE13DB391AF5B09EA6B2" : "phlash\/",
+    "C73195EA867705DC474C61C8AAD2A676C1C9E726" : "phlashSpike\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "PhlashSpike",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PhlashSpike.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:missamynicholson\/phlash.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "25FA26DA0170F5821FD3BE13DB391AF5B09EA6B2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:missamynicholson\/phlashSpike.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C73195EA867705DC474C61C8AAD2A676C1C9E726"
+    }
+  ]
+}
