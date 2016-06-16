@@ -15,7 +15,8 @@ class PhollowView: UIView {
     let usernameField = UITextField()
     let whiteColor = UIColor.whiteColor()
     let submitButton = UIButton()
-
+    let cancelButton = UIButton()
+    
     override init(frame: CGRect) {
         super.init(frame:frame)
         buildPhollowView()
@@ -25,7 +26,7 @@ class PhollowView: UIView {
         super.init(coder: aDecoder)
     }
     
-        func buildPhollowView() {
+    func buildPhollowView() {
         frame = CGRect(x: 0, y: 0, width: screenBounds.width, height: screenBounds.height)
         backgroundColor = backgroundGreen
         
@@ -38,7 +39,12 @@ class PhollowView: UIView {
         submitButton.setTitleColor(.whiteColor(), forState: .Normal)
         submitButton.setTitle("Submit", forState: .Normal)
         
+        cancelButton.frame = CGRect(x: screenBounds.width*4/5, y: 20, width: screenBounds.width/2, height: 30)
+        cancelButton.setTitleColor(.whiteColor(), forState: .Normal)
+        cancelButton.setTitle("Submit", forState: .Normal)
+        
         addSubview(usernameField)
         addSubview(submitButton)
+        addSubview(cancelButton)
     }
 }

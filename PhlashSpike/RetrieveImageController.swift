@@ -11,41 +11,44 @@ import UIKit
 import Parse
 
 protocol RetrieveImageControllerDelegate {
-    func retrievedImageControllerDismiss()
+    func retrieveImageControllerDismiss()
 }
 
 class RetrieveImageController: UIViewController {
     
-    var phlashesArray:[PFObject] = []
+   
     let screenBounds:CGSize = UIScreen.mainScreen().bounds.size
     var delegate:RetrieveImageControllerDelegate? = nil
+    var phlashImage = UIImage()
     
     
-    //received photo display//
-    func showFirstPhlash() {
-        if self.phlashesArray.count < 1 {
-            queryDatabaseForPhotos()
-        } else {
-            let phlash = phlashesArray.first
-            let userImageFile = phlash!["file"] as! PFFile
-            userImageFile.getDataInBackgroundWithBlock {
-                (imageData: NSData?, error: NSError?) -> Void in
-                if error == nil {
-                    if let imageData = imageData {
-                        let image = UIImage(data:imageData)
-                        let imageView = TheImageView(frame: CGRect(x: self.getXValue(image!), y: 0, width: self.getNewWidth(image!), height: self.screenBounds.height))
-                        self.view.addSubview(imageView)
-                        imageView.image = image
-                        self.delay(3.0) {
-                            self.delegate?.retrievedImageControllerDismiss()
-                        }
-                    }
-                }
-            }
-        }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        displayPhlash()
     }
     
     
+    func displayPhlash() {
+        
+        let imageView = TheImageView(frame: CGRect(x: getXValue(phlashImage), y: 0, width: getNewWidth(phlashImage), height: screenBounds.height))
+        self.view.addSubview(imageView)
+        imageView.image = phlashImage
+        delay(3.0) {
+            self.delegate?.retrieveImageControllerDismiss()
+        }
+    }
+
+
+
     func delay(delay:Double, closure:()->()) {
         dispatch_after(
             dispatch_time(
@@ -77,43 +80,5 @@ class RetrieveImageController: UIViewController {
         
         return newImage
     }
-    
-    
-    
-    
-    
-    func queryDatabaseForPhotos() {
-        //let lastSeenDate = defaults.objectForKey("lastSeen")
-        
-        let currentUser = PFUser.currentUser()
-        let currentUsername = currentUser!.username!
-        
-        let phollowing = PFQuery(className:"Phollow")
-        phollowing.whereKey("fromUsername", equalTo:currentUsername)
-        
-        let phlashes = PFQuery(className: "Phlash")
-        phlashes.whereKey("username", matchesKey: "toUsername", inQuery: phollowing)
-        //phlashes.whereKey("createdAt", greaterThan: lastSeenDate!)
-        phlashes.orderByAscending("createdAt")
-        
-        
-        phlashes.findObjectsInBackgroundWithBlock {
-            (results: [PFObject]?, error: NSError?) -> Void in
-            if error == nil {
-                if let objects = results {
-                    if objects.count > 0 {
-                        self.phlashesArray = objects
-                        self.showFirstPhlash()
-                        print("there are \(objects.count) phlashes")
-                    } else {
-                        print("there are \(objects.count) phlashes")
-                    }
-                }
-            } else {
-                print("Error: \(error!) \(error!.userInfo)")
-            }
-        }
-    }
-
 
 }

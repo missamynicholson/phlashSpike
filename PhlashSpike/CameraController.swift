@@ -10,18 +10,28 @@
 import UIKit
 import Parse
 
-class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CapturedImageControllerDelegate {
- 
+class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CapturedImageControllerDelegate, RetrieveImageControllerDelegate, PhollowControllerDelegate, AuthenticationControllerDelegate {
+    
     let screenBounds:CGSize = UIScreen.mainScreen().bounds.size
     let cameraAspectRatio:CGFloat = 4.0/3.0
     let cameraView = CameraView()
     
     var picker = UIImagePickerController()
+    var authenticationController = AuthenticationController()
+    let capturedImageController = CapturedImageController()
+    let retrieveImageController = RetrieveImageController()
+    let phollowController = PhollowController()
+    var phlashesArray:[PFObject] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        cameraView.frame = CGRect(x: 0, y: 0, width: screenBounds.width, height: screenBounds.height)
+        cameraView.logoutButton.addTarget(self, action: #selector(buttonActionLogout), forControlEvents: .TouchUpInside)
+        cameraView.phollowButton.addTarget(self, action: #selector(buttonActionPhollow), forControlEvents: .TouchUpInside)
+        cameraView.swipeRight.addTarget(self, action: #selector(respondToSwipeGesture))
+        cameraView.swipeLeft.addTarget(self, action: #selector(respondToSwipeGesture))
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,27 +41,27 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        authenticationController.delegate = self
+        phollowController.delegate = self
+        capturedImageController.delegate = self
+        retrieveImageController.delegate = self
         loadImagePicker()
-        cameraView.frame = CGRect(x: 0, y: 0, width: screenBounds.width, height: screenBounds.height)
-        cameraView.logoutButton.addTarget(self, action: #selector(buttonActionLogout), forControlEvents: .TouchUpInside)
-        cameraView.phollowButton.addTarget(self, action: #selector(buttonActionPhollow), forControlEvents: .TouchUpInside)
-        cameraView.swipeRight.addTarget(self, action: #selector(respondToSwipeGesture))
-        cameraView.swipeLeft.addTarget(self, action: #selector(respondToSwipeGesture))
+        if (PFUser.currentUser() == nil) {
+            //segue to the Authentication Screen
+        }
     }
-    
+
     
     func buttonActionLogout(sender: UIButton!) {
         print("You have logged out")
         PFUser.logOut()
-        let authenticationController = AuthenticationController()
         self.picker.presentViewController(authenticationController, animated: true, completion: nil)
     }
     
     func buttonActionPhollow(sender: UIButton!) {
         print("You want to phollow someone")
-        let phollowController = PhollowController()
         self.picker.presentViewController(phollowController, animated: true, completion: nil)
-
+        
     }
     
     
@@ -59,12 +69,33 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {
             case UISwipeGestureRecognizerDirection.Right:
-                print("You've taken a picture")
                 picker.takePicture()
             case UISwipeGestureRecognizerDirection.Left:
-                print("You've queried the database")
+                showFirstPhlash()
             default:
                 break
+            }
+        }
+    }
+    
+    func showFirstPhlash() {
+        if self.phlashesArray.count < 1 {
+            queryDatabaseForPhotos()
+        } else {
+            print("arrived here")
+            let firstPhlash = phlashesArray.first
+            let userImageFile = firstPhlash!["file"] as! PFFile
+            userImageFile.getDataInBackgroundWithBlock {
+                (imageData: NSData?, error: NSError?) -> Void in
+                if error == nil {
+                    if let imageData = imageData {
+                        print("arrived here second")
+                        let image = UIImage(data:imageData)
+                        
+                        self.retrieveImageController.phlashImage = image!
+                        self.picker.presentViewController(self.retrieveImageController, animated: true, completion: nil)
+                    }
+                }
             }
         }
     }
@@ -80,13 +111,12 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             
             picker = makePickerFullScreen(picker)
             
-            
             presentViewController(picker, animated: true, completion: {
                 self.picker.cameraOverlayView = self.cameraView
                 }
             )
         }
-
+        
     }
     
     
@@ -102,20 +132,59 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
                                didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-
-        let capturedImageController = CapturedImageController()
+        
         capturedImageController.capturedImage = chosenImage
         self.picker.presentViewController(capturedImageController, animated: true, completion: nil)
-        
     }
     
+    func queryDatabaseForPhotos() {
+        //let lastSeenDate = defaults.objectForKey("lastSeen")
+        
+        let currentUser = PFUser.currentUser()
+        let currentUsername = currentUser!.username!
+        
+        let phollowing = PFQuery(className:"Phollow")
+        phollowing.whereKey("fromUsername", equalTo:currentUsername)
+        
+        let phlashes = PFQuery(className: "Phlash")
+        phlashes.whereKey("username", matchesKey: "toUsername", inQuery: phollowing)
+        //phlashes.whereKey("createdAt", greaterThan: lastSeenDate!)
+        phlashes.orderByAscending("createdAt")
+        
+        
+        phlashes.findObjectsInBackgroundWithBlock {
+            (results: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                if let objects = results {
+                    if objects.count > 0 {
+                        self.phlashesArray = objects
+                        self.showFirstPhlash()
+                    } else {
+                        print("there are \(objects.count) phlashes")
+                    }
+                }
+            } else {
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+    }
+    
+    
     func capturedImageControllerDismiss() {
+        self.picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func retrieveImageControllerDismiss() {
         self.picker.dismissViewControllerAnimated(true, completion: nil);
     }
-
-    func retrievedImageControllerDismiss() {
+    
+    func authenticationControllerDismiss() {
         self.picker.dismissViewControllerAnimated(true, completion: nil);
     }
-
+    
+    func phollowControllerDismiss() {
+        self.picker.dismissViewControllerAnimated(true, completion: nil);
+    }
+    
 }
 

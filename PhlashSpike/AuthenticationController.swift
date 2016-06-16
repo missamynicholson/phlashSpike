@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 import Parse
 
+protocol AuthenticationControllerDelegate {
+    func authenticationControllerDismiss()
+}
+
+
 class AuthenticationController: UIViewController {
     
     let greenView = GreenView()
@@ -23,17 +28,20 @@ class AuthenticationController: UIViewController {
     
     let defaults = NSUserDefaults.standardUserDefaults()
     
+    var delegate: AuthenticationControllerDelegate? = nil
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.view.addSubview(greenView)
+        self.view = greenView
         submitButton = greenView.submitButton
         loginButton = greenView.loginButton
         signupButton = greenView.signupButton
         usernameField = greenView.usernameField
         emailField = greenView.emailField
         passwordField = greenView.passwordField
+        
+        self.delegate?.authenticationControllerDismiss()
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,13 +51,12 @@ class AuthenticationController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        greenView.submitButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
-        greenView.loginButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
-        greenView.signupButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
+        submitButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
+        loginButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
+        signupButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
     }
     
     
-    /*********SIGNUP/LOGIN/LOGOUT***********/
     func buttonAction(sender: UIButton!) {
         if sender == submitButton && emailField.hidden {
             login()
@@ -63,7 +70,7 @@ class AuthenticationController: UIViewController {
     }
     
     
-    //database and business//
+    
     func signUp() {
         let username = usernameField.text
         let email = emailField.text
@@ -81,7 +88,7 @@ class AuthenticationController: UIViewController {
                 let errorMessage = error.userInfo["error"] as? NSString
                 print("Error with singup \(errorMessage)")
             } else {
-                //self.hideGreenView()
+                self.delegate?.authenticationControllerDismiss()
                 self.defaults.setValue(twentyFourHoursSince, forKey: "lastSeen")
             }
         }
@@ -94,7 +101,7 @@ class AuthenticationController: UIViewController {
         PFUser.logInWithUsernameInBackground(username!, password:password!) {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
-                //self.hideGreenView()
+                self.delegate?.authenticationControllerDismiss()
             } else {
                 print("Error: \(error!) \(error!.userInfo)")
             }
@@ -104,5 +111,4 @@ class AuthenticationController: UIViewController {
     func getResetLink() {
         PFUser.requestPasswordResetForEmailInBackground("email@example.com")
     }
-    //database and business//
 }

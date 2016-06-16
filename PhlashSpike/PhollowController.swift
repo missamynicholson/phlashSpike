@@ -10,21 +10,31 @@ import Foundation
 import UIKit
 import Parse
 
+protocol PhollowControllerDelegate {
+    func phollowControllerDismiss()
+}
+
 class PhollowController: UIViewController {
     
     let phollowView = PhollowView()
     
     var usernameField = UITextField()
     var submitButton = UIButton()
+    var cancelButton = UIButton()
+    
+    var delegate: PhollowControllerDelegate? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.view.addSubview(phollowView)
+        self.view = phollowView
         usernameField = phollowView.usernameField
         submitButton = phollowView.submitButton
+        cancelButton = phollowView.cancelButton
         
         phollowView.submitButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
+         phollowView.cancelButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
+        self.delegate?.phollowControllerDismiss()
     }
     
     override func didReceiveMemoryWarning() {
@@ -37,7 +47,11 @@ class PhollowController: UIViewController {
     }
     
     func buttonAction(sender: UIButton!) {
-        phollow(usernameField.text!)
+        if sender == submitButton {
+            phollow(usernameField.text!)
+        } else {
+            self.delegate?.phollowControllerDismiss()
+        }
     }
     
     func phollow(toUsername: String) {

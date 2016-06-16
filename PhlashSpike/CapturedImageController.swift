@@ -42,9 +42,11 @@ class CapturedImageController: UIViewController {
     func setImage() {
         if let image = capturedImage {
             let imageView = TheImageView(frame: CGRect(x: getXValue(image), y: 0, width: getNewWidth(image), height: screenBounds.height))
-            self.view.addSubview(imageView)
-            imageView.image = image
+            self.view = imageView
+            imageView.image = resizeImage(image, newWidth: getNewWidth(image))
+            //sendPhoto(resizeImage(image, newWidth: getNewWidth(image)))
             delay(3.0) {
+                print("here")
                 self.delegate?.capturedImageControllerDismiss()
             }
         } else {
@@ -77,19 +79,6 @@ class CapturedImageController: UIViewController {
         return newImage
     }
     //HELPER
-
-    
-    
-    
-    
-    
-
-    
-    //captured photo manipulation
-    
-
-    //captured photo manipulation
-    
     
     //database//
     func sendPhoto(image: UIImage) {
