@@ -126,34 +126,34 @@
 		8405EDF01D12B83000DD5921 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A5CC82161D1284120013310D /* CameraController.swift */,
 				A5CC821A1D12842C0013310D /* AuthenticationController.swift */,
+				A5CC82161D1284120013310D /* CameraController.swift */,
 				A5CC82221D1284890013310D /* CapturedImageController.swift */,
-				A5CC82241D1284980013310D /* RetrieveImageController.swift */,
 				A5CC822A1D1285F10013310D /* PhollowController.swift */,
+				A5CC82241D1284980013310D /* RetrieveImageController.swift */,
 			);
-			name = Controllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		8405EDF11D12B84E00DD5921 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A5CC82281D1285E40013310D /* PhollowView.swift */,
-				A5CC82201D12847B0013310D /* TheImageView.swift */,
 				A5CC821E1D1284600013310D /* CameraView.swift */,
 				A5CC821C1D12844F0013310D /* GreenView.swift */,
+				A5CC82281D1285E40013310D /* PhollowView.swift */,
+				A5CC82201D12847B0013310D /* TheImageView.swift */,
 			);
-			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A5BD69A21D0D7C4E00ADF4DE = {
 			isa = PBXGroup;
 			children = (
+				A5BD69E21D0FCB7000ADF4DE /* Frameworks */,
 				A5BD69AD1D0D7C4E00ADF4DE /* PhlashSpike */,
 				A5BD69C21D0D7C4E00ADF4DE /* PhlashSpikeTests */,
 				A5BD69CD1D0D7C4E00ADF4DE /* PhlashSpikeUITests */,
 				A5BD69AC1D0D7C4E00ADF4DE /* Products */,
-				A5BD69E21D0FCB7000ADF4DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -170,13 +170,13 @@
 		A5BD69AD1D0D7C4E00ADF4DE /* PhlashSpike */ = {
 			isa = PBXGroup;
 			children = (
-				8405EDF11D12B84E00DD5921 /* Views */,
 				8405EDF01D12B83000DD5921 /* Controllers */,
+				8405EDF11D12B84E00DD5921 /* Views */,
 				A5BD69AE1D0D7C4E00ADF4DE /* AppDelegate.swift */,
-				A5BD69B21D0D7C4E00ADF4DE /* Main.storyboard */,
 				A5BD69B51D0D7C4E00ADF4DE /* Assets.xcassets */,
-				A5BD69B71D0D7C4E00ADF4DE /* LaunchScreen.storyboard */,
 				A5BD69BA1D0D7C4E00ADF4DE /* Info.plist */,
+				A5BD69B71D0D7C4E00ADF4DE /* LaunchScreen.storyboard */,
+				A5BD69B21D0D7C4E00ADF4DE /* Main.storyboard */,
 			);
 			path = PhlashSpike;
 			sourceTree = "<group>";
@@ -184,8 +184,8 @@
 		A5BD69C21D0D7C4E00ADF4DE /* PhlashSpikeTests */ = {
 			isa = PBXGroup;
 			children = (
-				A5BD69C31D0D7C4E00ADF4DE /* PhlashSpikeTests.swift */,
 				A5BD69C51D0D7C4E00ADF4DE /* Info.plist */,
+				A5BD69C31D0D7C4E00ADF4DE /* PhlashSpikeTests.swift */,
 			);
 			path = PhlashSpikeTests;
 			sourceTree = "<group>";
@@ -193,8 +193,8 @@
 		A5BD69CD1D0D7C4E00ADF4DE /* PhlashSpikeUITests */ = {
 			isa = PBXGroup;
 			children = (
-				A5BD69CE1D0D7C4E00ADF4DE /* PhlashSpikeUITests.swift */,
 				A5BD69D01D0D7C4E00ADF4DE /* Info.plist */,
+				A5BD69CE1D0D7C4E00ADF4DE /* PhlashSpikeUITests.swift */,
 			);
 			path = PhlashSpikeUITests;
 			sourceTree = "<group>";
@@ -302,7 +302,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A5BD69A61D0D7C4E00ADF4DE /* Build configuration list for PBXProject "PhlashSpike" */;
+			buildConfigurationList = A5BD69A61D0D7C4E00ADF4DE /* Build configuration list for PBXProject "phlashSpike" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -405,6 +405,7 @@
 				A5BD69B31D0D7C4E00ADF4DE /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		A5BD69B71D0D7C4E00ADF4DE /* LaunchScreen.storyboard */ = {
@@ -413,6 +414,7 @@
 				A5BD69B81D0D7C4E00ADF4DE /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -584,7 +586,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A5BD69A61D0D7C4E00ADF4DE /* Build configuration list for PBXProject "PhlashSpike" */ = {
+		A5BD69A61D0D7C4E00ADF4DE /* Build configuration list for PBXProject "phlashSpike" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A5BD69D11D0D7C4E00ADF4DE /* Debug */,
