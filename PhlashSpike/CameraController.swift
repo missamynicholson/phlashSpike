@@ -12,22 +12,24 @@ import Parse
 
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    let screenBounds:CGSize = UIScreen.mainScreen().bounds.size
-    let cameraView = CameraView()
+    private let screenBounds:CGSize = UIScreen.mainScreen().bounds.size
+    private let cameraView = CameraView()
     
-    var picker = UIImagePickerController()
-    var authenticationController = AuthenticationController()
-    let phollowController = PhollowController()
+    private var picker = UIImagePickerController()
+    private var authenticationController = AuthenticationController()
+    private let phollowView = PhollowView()
     
     
     override func viewDidLoad() {
-        print("hello")
         super.viewDidLoad()
-        cameraView.frame = CGRect(x: 0, y: 0, width: screenBounds.width, height: screenBounds.height)
-        cameraView.logoutButton.addTarget(self, action: #selector(buttonActionLogout), forControlEvents: .TouchUpInside)
-        cameraView.phollowButton.addTarget(self, action: #selector(buttonActionPhollow), forControlEvents: .TouchUpInside)
+        cameraView.frame = view.frame
+        cameraView.logoutButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
+        cameraView.phollowButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
         cameraView.swipeRight.addTarget(self, action: #selector(respondToSwipeGesture))
         cameraView.swipeLeft.addTarget(self, action: #selector(respondToSwipeGesture))
+        phollowView.frame = view.frame
+        phollowView.cancelButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
+        phollowView.submitButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
     }
     
     override func didReceiveMemoryWarning() {
@@ -44,23 +46,42 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             PickerSetup().makePickerFullScreen(picker)
             picker.delegate = self
             
-            presentViewController(picker, animated: true, completion: {
+            presentViewController(picker, animated: false, completion: {
                 self.picker.cameraOverlayView = self.cameraView
             })
         }
-        //if PFUser.currentUser() == nil {
-            performSegueWithIdentifier("toAuth", sender: nil)
-        //}
     }
 
     
-    func buttonActionLogout(sender: UIButton!) {
+    func buttonAction(sender: UIButton!) {
+        switch sender {
+        case cameraView.logoutButton:
+            logout()
+        case cameraView.phollowButton:
+            ButtonShowHide().hide(cameraView.logoutButton, phollowButton: cameraView.phollowButton)
+            cameraView.addSubview(phollowView)
+        case phollowView.cancelButton:
+            ButtonShowHide().show(cameraView.logoutButton, phollowButton: cameraView.phollowButton)
+            phollowView.removeFromSuperview()
+        case phollowView.submitButton:
+            phollow()
+        default:
+            break
+        }
+    }
+
+
+    func logout() {
         PFUser.logOut()
-        performSegueWithIdentifier("toAuth", sender: nil)
+        picker.dismissViewControllerAnimated(false, completion: {
+            self.performSegueWithIdentifier("toAuth", sender: nil)
+        })
     }
     
-    func buttonActionPhollow(sender: UIButton!) {
-        performSegueWithIdentifier("toPhollow", sender: nil)
+    func phollow() {
+        let username = phollowView.usernameField.text
+        PhollowSomeone().phollow(username!)
+        phollowView.removeFromSuperview()
     }
     
     
@@ -85,10 +106,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         let resizedImage = ResizeImage().resizeImage(chosenImage, newWidth: ImageViewFrame().getNewWidth(chosenImage))
         DisplayImage().display(chosenImage, cameraView: cameraView)
         //SendPhoto().sendPhoto(resizedImage)
-    }
-    
-    @IBAction func unwindToCamera(segue: UIStoryboardSegue) {
-        
     }
     
 }

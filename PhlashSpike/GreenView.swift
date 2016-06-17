@@ -13,9 +13,10 @@ class GreenView: UIView {
     let usernameField = UITextField()
     let emailField = UITextField()
     let passwordField = UITextField()
-    let screenBounds:CGSize = UIScreen.mainScreen().bounds.size
-    let whiteColor = UIColor.whiteColor()
-    let backgroundGreen: UIColor = UIColor( red: CGFloat(62/255.0), green: CGFloat(200/255.0), blue: CGFloat(172/255.0), alpha: CGFloat(0.75))
+    
+    private let screenBounds:CGSize = UIScreen.mainScreen().bounds.size
+    private let whiteColor = UIColor.whiteColor()
+    private let backgroundGreen: UIColor = UIColor( red: CGFloat(62/255.0), green: CGFloat(200/255.0), blue: CGFloat(172/255.0), alpha: CGFloat(0.75))
     let submitButton = UIButton()
     let loginButton = UIButton()
     let signupButton = UIButton()
@@ -33,7 +34,7 @@ class GreenView: UIView {
 
     //view setup
     func buildGreenView() {
-        frame = CGRect(x: 0, y: screenBounds.height, width: screenBounds.width, height: screenBounds.height)
+        frame = CGRect(x: 0, y: 0, width: screenBounds.width, height: screenBounds.height)
         backgroundColor = backgroundGreen
         
         usernameField.frame = CGRect(x: 0, y: screenBounds.height/8, width: screenBounds.width, height: screenBounds.height/15)

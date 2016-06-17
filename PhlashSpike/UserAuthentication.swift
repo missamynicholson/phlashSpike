@@ -10,7 +10,7 @@ import Parse
 
 class UserAuthentication {
     
-    func signUp(username: String, email: String, password: String) {
+    func signUp(controller: UIViewController, username: String, email: String, password: String) {
         
         let twentyFourHoursSince = NSDate(timeIntervalSinceReferenceDate: -86400.0)
         
@@ -25,18 +25,18 @@ class UserAuthentication {
                 let errorMessage = error.userInfo["error"] as? NSString
                 print("Error with singup \(errorMessage)")
             } else {
-                //self.delegate?.authenticationControllerDismiss()
+                controller.performSegueWithIdentifier("toCamera", sender: nil)
                 //self.defaults.setValue(twentyFourHoursSince, forKey: "lastSeen")
             }
         }
-        
+
     }
     
-    func login(username: String, password: String) {
+    func login(controller: UIViewController, username: String, password: String) {
         PFUser.logInWithUsernameInBackground(username, password:password) {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
-                //self.delegate?.authenticationControllerDismiss()
+                controller.performSegueWithIdentifier("toCamera", sender: nil)
             } else {
                 print("Error: \(error!) \(error!.userInfo)")
             }

@@ -30,12 +30,10 @@ class PhollowView: UIView {
     }
     
     func buildPhollowView() {
-        frame = CGRect(x: 0, y: 0, width: screenBounds.width, height: screenBounds.height)
         backgroundColor = backgroundGreen
     }
     
     func addUsernameField() {
-        let usernameField = UITextField()
         usernameField.frame = CGRect(x: 0, y: screenBounds.height/8, width: screenBounds.width, height: screenBounds.height/15)
         usernameField.backgroundColor = UIColor.colorWithAlphaComponent(.whiteColor())(0.5)
         usernameField.placeholder = "Username"
@@ -44,7 +42,6 @@ class PhollowView: UIView {
     }
     
     func addSubmitButton() {
-        let submitButton = UIButton()
         submitButton.frame = CGRect(x: screenBounds.width/4, y: screenBounds.height/2, width: screenBounds.width/2, height: 30)
         submitButton.setTitleColor(.whiteColor(), forState: .Normal)
         submitButton.setTitle("Submit", forState: .Normal)
@@ -52,7 +49,6 @@ class PhollowView: UIView {
     }
     
     func addCancelButton() {
-        let cancelButton = UIButton()
         cancelButton.frame = CGRect(x: screenBounds.width*4/5, y: 20, width: screenBounds.width/5, height: 30)
         cancelButton.setTitleColor(.whiteColor(), forState: .Normal)
         cancelButton.setTitle("Cancel", forState: .Normal)

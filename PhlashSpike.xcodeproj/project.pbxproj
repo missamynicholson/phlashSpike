@@ -29,7 +29,6 @@
 		A5CC821F1D1284600013310D /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC821E1D1284600013310D /* CameraView.swift */; };
 		A5CC82211D12847B0013310D /* TheImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC82201D12847B0013310D /* TheImageView.swift */; };
 		A5CC82291D1285E40013310D /* PhollowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC82281D1285E40013310D /* PhollowView.swift */; };
-		A5CC822B1D1285F10013310D /* PhollowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC822A1D1285F10013310D /* PhollowController.swift */; };
 		A5CC822E1D1293B20013310D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5CC822C1D1293B20013310D /* Bolts.framework */; };
 		A5CC822F1D1293B20013310D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5CC822D1D1293B20013310D /* Parse.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		A5CC82351D1316440013310D /* ImageViewFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC82341D1316440013310D /* ImageViewFrame.swift */; };
@@ -40,6 +39,7 @@
 		A5CC823F1D134B6F0013310D /* PickerSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC823E1D134B6F0013310D /* PickerSetup.swift */; };
 		A5CC82421D134F510013310D /* UserAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC82411D134F510013310D /* UserAuthentication.swift */; };
 		A5CC82441D13515D0013310D /* PhollowSomeone.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC82431D13515D0013310D /* PhollowSomeone.swift */; };
+		A5CC82461D13CD990013310D /* ButtonShowHide.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC82451D13CD990013310D /* ButtonShowHide.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +88,6 @@
 		A5CC821E1D1284600013310D /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		A5CC82201D12847B0013310D /* TheImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheImageView.swift; sourceTree = "<group>"; };
 		A5CC82281D1285E40013310D /* PhollowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhollowView.swift; sourceTree = "<group>"; };
-		A5CC822A1D1285F10013310D /* PhollowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhollowController.swift; sourceTree = "<group>"; };
 		A5CC822C1D1293B20013310D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A5CC822D1D1293B20013310D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A5CC82341D1316440013310D /* ImageViewFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewFrame.swift; sourceTree = "<group>"; };
@@ -99,6 +98,7 @@
 		A5CC823E1D134B6F0013310D /* PickerSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerSetup.swift; sourceTree = "<group>"; };
 		A5CC82411D134F510013310D /* UserAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAuthentication.swift; sourceTree = "<group>"; };
 		A5CC82431D13515D0013310D /* PhollowSomeone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhollowSomeone.swift; sourceTree = "<group>"; };
+		A5CC82451D13CD990013310D /* ButtonShowHide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonShowHide.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +142,6 @@
 			children = (
 				A5CC82161D1284120013310D /* CameraController.swift */,
 				A5CC821A1D12842C0013310D /* AuthenticationController.swift */,
-				A5CC822A1D1285F10013310D /* PhollowController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -170,6 +169,7 @@
 				A5CC823E1D134B6F0013310D /* PickerSetup.swift */,
 				A5CC82411D134F510013310D /* UserAuthentication.swift */,
 				A5CC82431D13515D0013310D /* PhollowSomeone.swift */,
+				A5CC82451D13CD990013310D /* ButtonShowHide.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -392,8 +392,8 @@
 				A5CC821D1D12844F0013310D /* GreenView.swift in Sources */,
 				A5CC82291D1285E40013310D /* PhollowView.swift in Sources */,
 				A5CC821F1D1284600013310D /* CameraView.swift in Sources */,
-				A5CC822B1D1285F10013310D /* PhollowController.swift in Sources */,
 				A5CC823D1D1345B70013310D /* RetrievePhoto.swift in Sources */,
+				A5CC82461D13CD990013310D /* ButtonShowHide.swift in Sources */,
 				A5CC82211D12847B0013310D /* TheImageView.swift in Sources */,
 				A5CC82351D1316440013310D /* ImageViewFrame.swift in Sources */,
 				A5BD69AF1D0D7C4E00ADF4DE /* AppDelegate.swift in Sources */,

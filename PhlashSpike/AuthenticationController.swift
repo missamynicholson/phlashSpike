@@ -13,20 +13,23 @@ import Parse
 
 class AuthenticationController: UIViewController {
     
-    let greenView = GreenView()
+    private let greenView = GreenView()
     
-    var usernameField = UITextField()
-    var emailField = UITextField()
-    var passwordField = UITextField()
-    var submitButton = UIButton()
-    var loginButton = UIButton()
-    var signupButton = UIButton()
+   private var usernameField = UITextField()
+    private var emailField = UITextField()
+    private var passwordField = UITextField()
+    private var submitButton = UIButton()
+    private var loginButton = UIButton()
+    private var signupButton = UIButton()
     
-    let defaults = NSUserDefaults.standardUserDefaults()
+    private let defaults = NSUserDefaults.standardUserDefaults()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if PFUser.currentUser() != nil {
+            performSegueWithIdentifier("toCamera", sender: nil)
+        } else {
             self.view = greenView
             submitButton = greenView.submitButton
             loginButton = greenView.loginButton
@@ -34,6 +37,10 @@ class AuthenticationController: UIViewController {
             usernameField = greenView.usernameField
             emailField = greenView.emailField
             passwordField = greenView.passwordField
+            submitButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
+            loginButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
+            signupButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,9 +50,7 @@ class AuthenticationController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        submitButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
-        loginButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
-        signupButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
+        greenView.showLoginOrSignupScreen()
     }
     
     
@@ -64,19 +69,23 @@ class AuthenticationController: UIViewController {
     func login() {
         let username = usernameField.text
         let password = passwordField.text
-        UserAuthentication().login(username!, password: password!)
+        UserAuthentication().login(self, username: username!, password: password!)
     }
     
     func signUp() {
         let username = usernameField.text
         let email = emailField.text
         let password = passwordField.text
-        UserAuthentication().signUp(username!, email: email!, password: password!)
+        UserAuthentication().signUp(self, username: username!, email: email!, password: password!)
     }
     
     func reset() {
         let email = emailField.text
         UserAuthentication().getResetLink(email!)
+    }
+    
+    @IBAction func unwindToAuth(segue: UIStoryboardSegue) {
+        
     }
     
    

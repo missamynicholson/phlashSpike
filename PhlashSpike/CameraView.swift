@@ -10,7 +10,7 @@ import UIKit
 
 class CameraView: UIView {
     
-    let screenBounds:CGSize = UIScreen.mainScreen().bounds.size
+    private let screenBounds:CGSize = UIScreen.mainScreen().bounds.size
     let logoutButton = UIButton()
     let phollowButton = UIButton()
     let swipeRight = UISwipeGestureRecognizer()
