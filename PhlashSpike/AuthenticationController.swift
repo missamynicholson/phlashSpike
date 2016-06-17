@@ -29,18 +29,17 @@ class AuthenticationController: UIViewController {
         super.viewDidLoad()
         if PFUser.currentUser() != nil {
             performSegueWithIdentifier("toCamera", sender: nil)
-        } else {
-            self.view = greenView
-            submitButton = greenView.submitButton
-            loginButton = greenView.loginButton
-            signupButton = greenView.signupButton
-            usernameField = greenView.usernameField
-            emailField = greenView.emailField
-            passwordField = greenView.passwordField
-            submitButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
-            loginButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
-            signupButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
         }
+        self.view = greenView
+        submitButton = greenView.submitButton
+        loginButton = greenView.loginButton
+        signupButton = greenView.signupButton
+        usernameField = greenView.usernameField
+        emailField = greenView.emailField
+        passwordField = greenView.passwordField
+        submitButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
+        loginButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
+        signupButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
     }
     
     override func didReceiveMemoryWarning() {
@@ -84,9 +83,7 @@ class AuthenticationController: UIViewController {
         UserAuthentication().getResetLink(email!)
     }
     
-    @IBAction func unwindToAuth(segue: UIStoryboardSegue) {
-        
-    }
+    @IBAction func unwindToAuth(segue: UIStoryboardSegue) {}
     
    
 }

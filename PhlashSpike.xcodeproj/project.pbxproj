@@ -27,7 +27,7 @@
 		A5CC821B1D12842C0013310D /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC821A1D12842C0013310D /* AuthenticationController.swift */; };
 		A5CC821D1D12844F0013310D /* GreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC821C1D12844F0013310D /* GreenView.swift */; };
 		A5CC821F1D1284600013310D /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC821E1D1284600013310D /* CameraView.swift */; };
-		A5CC82211D12847B0013310D /* TheImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC82201D12847B0013310D /* TheImageView.swift */; };
+		A5CC82211D12847B0013310D /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC82201D12847B0013310D /* ImageView.swift */; };
 		A5CC82291D1285E40013310D /* PhollowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC82281D1285E40013310D /* PhollowView.swift */; };
 		A5CC822E1D1293B20013310D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5CC822C1D1293B20013310D /* Bolts.framework */; };
 		A5CC822F1D1293B20013310D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5CC822D1D1293B20013310D /* Parse.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -86,7 +86,7 @@
 		A5CC821A1D12842C0013310D /* AuthenticationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
 		A5CC821C1D12844F0013310D /* GreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenView.swift; sourceTree = "<group>"; };
 		A5CC821E1D1284600013310D /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
-		A5CC82201D12847B0013310D /* TheImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheImageView.swift; sourceTree = "<group>"; };
+		A5CC82201D12847B0013310D /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		A5CC82281D1285E40013310D /* PhollowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhollowView.swift; sourceTree = "<group>"; };
 		A5CC822C1D1293B20013310D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A5CC822D1D1293B20013310D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				A5CC82281D1285E40013310D /* PhollowView.swift */,
-				A5CC82201D12847B0013310D /* TheImageView.swift */,
+				A5CC82201D12847B0013310D /* ImageView.swift */,
 				A5CC821E1D1284600013310D /* CameraView.swift */,
 				A5CC821C1D12844F0013310D /* GreenView.swift */,
 			);
@@ -394,7 +394,7 @@
 				A5CC821F1D1284600013310D /* CameraView.swift in Sources */,
 				A5CC823D1D1345B70013310D /* RetrievePhoto.swift in Sources */,
 				A5CC82461D13CD990013310D /* ButtonShowHide.swift in Sources */,
-				A5CC82211D12847B0013310D /* TheImageView.swift in Sources */,
+				A5CC82211D12847B0013310D /* ImageView.swift in Sources */,
 				A5CC82351D1316440013310D /* ImageViewFrame.swift in Sources */,
 				A5BD69AF1D0D7C4E00ADF4DE /* AppDelegate.swift in Sources */,
 				A5CC82371D1317AA0013310D /* ResizeImage.swift in Sources */,

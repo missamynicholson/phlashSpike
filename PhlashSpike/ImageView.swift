@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TheImageView: UIImageView {
+class ImageView: UIImageView {
     
     let screenBounds:CGSize = UIScreen.mainScreen().bounds.size
     

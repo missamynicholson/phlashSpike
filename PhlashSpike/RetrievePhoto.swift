@@ -25,7 +25,7 @@ class RetrievePhoto {
                 if error == nil {
                     if let imageData = imageData {
                         let chosenImage = UIImage(data:imageData)!
-                        DisplayImage().display(chosenImage, cameraView: cameraView)
+                        DisplayImage().setup(chosenImage, cameraView: cameraView, animate: true)
                         //self.phlashesArray.removeAtIndex(0)
                     }
                 }

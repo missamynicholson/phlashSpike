@@ -23,13 +23,15 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraView.frame = view.frame
-        cameraView.logoutButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
-        cameraView.phollowButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
+        phollowView.frame = view.frame
+        
+        let buttonArray = [cameraView.logoutButton, cameraView.phollowButton, phollowView.cancelButton, phollowView.submitButton]
+        for button in buttonArray {
+            button.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
+        }
+    
         cameraView.swipeRight.addTarget(self, action: #selector(respondToSwipeGesture))
         cameraView.swipeLeft.addTarget(self, action: #selector(respondToSwipeGesture))
-        phollowView.frame = view.frame
-        phollowView.cancelButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
-        phollowView.submitButton.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
     }
     
     override func didReceiveMemoryWarning() {
@@ -79,8 +81,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     func phollow() {
-        let username = phollowView.usernameField.text
-        PhollowSomeone().phollow(username!)
+        PhollowSomeone().phollow(phollowView.usernameField.text!)
         phollowView.removeFromSuperview()
     }
     
@@ -104,7 +105,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         let resizedImage = ResizeImage().resizeImage(chosenImage, newWidth: ImageViewFrame().getNewWidth(chosenImage))
-        DisplayImage().display(chosenImage, cameraView: cameraView)
+        DisplayImage().setup(chosenImage, cameraView: cameraView, animate: false)
         //SendPhoto().sendPhoto(resizedImage)
     }
     
